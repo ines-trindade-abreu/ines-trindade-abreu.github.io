@@ -1,6 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <body>
+	<div class="wrapper">
+        <!--Top menu -->
+        <div class="sidebar">
+           <!--profile image & text-->
+           <div class="profile">
+                <img src="https://media.licdn.com/dms/image/C4E03AQEBylhwGBOgUw/profile-displayphoto-shrink_800_800/0/1650539584294?e=1697068800&v=beta&t=3SvxDtthcZ9BmoaKQ42fZBHE8U26SCFQ63SJdbXK34U" alt="profile_picture">
+                <h3>Inês Pontes</h3>
+            </div>
+            <!--menu item-->
+            <ul>
+                <li>
+                    <a href="./index.html" class="active">
+                        <span class="icon"><i class="gg-home"></i></span>
+                        <span class="item">Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="./aboutme.html">
+                        <span class="icon"><i class="gg-bolt"></i></span>
+                        <span class="item">About Me</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="./research.html">
+                        <span class="icon"><i class="gg-shape-hexagon"></i></span>
+                        <span class="item">Research</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="./contact.html">
+                        <span class="icon"><i class="gg-attachment"></i></span>
+                        <span class="item">Contact</span>
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+        
+        <div class="section">
+            <div class="top_navbar">
+                <div class="hamburger">
+                    <a href="#">
+                        <i class="gg-bars"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- active menu button using JavaScript --->
+
+        <script>
+        	var hamburguer = document.querySelector(".hamburger");
+        	hamburguer.addEventListener("click", function(){
+        		document.querySelector("body").classList.toggle("active");
+        	})
+        </script>
+        
 	<h1>
 		About Me
 	</h1>
