@@ -73,7 +73,13 @@
             <!--menu item-->
             <ul>
 			<li>
-			&copy 2025 Inês Pontes
+			&copy <span id="currentYear"></span> Inês da Trindade Abreu
+				<script>
+				document.addEventListener('DOMContentLoaded', function() {
+ 				var currentYear = new Date().getFullYear();
+ 				document.getElementById('currentYear').textContent = currentYear;
+				});
+				</script>
 			</li>
                 
             </ul>
