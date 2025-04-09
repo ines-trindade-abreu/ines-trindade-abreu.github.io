@@ -17,16 +17,16 @@
             <!--menu item-->
             <ul>
                 <li>
-                    <a href="https://in3spontes.github.io/index.html">Home</a>
+                    <a href="https://ines-trindade-abreu.github.io/index.html">Home</a>
                 </li>
                 <li>
-                    <a href="https://in3spontes.github.io/aboutme.html">About Me</a>
+                    <a href="https://ines-trindade-abreu.github.io/aboutme.html">About Me</a>
                 </li>
                 <li>
-                    <a href="https://in3spontes.github.io/research.html">Research & Interests</a>
+                    <a href="https://ines-trindade-abreu.github.io/research.html">Research & Interests</a>
                 </li>
                 <li>
-                    <a href="https://in3spontes.github.io/contact.html">Contact</a>
+                    <a href="https://ines-trindade-abreu.github.io/contact.html">Contact</a>
                 </li>
                 
             </ul>
@@ -50,7 +50,13 @@
             <!--menu item-->
             <ul>
 			<li>
-			&copy 2024 Inês Pontes
+			&copy <span id="currentYear"></span> Inês da Trindade Abreu
+				<script>
+				document.addEventListener('DOMContentLoaded', function() {
+ 				var currentYear = new Date().getFullYear();
+ 				document.getElementById('currentYear').textContent = currentYear;
+				});
+				</script>
 			</li>
                 
             </ul>
