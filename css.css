@@ -201,7 +201,7 @@ body.bg-pillars::before {
 .image-credit {
   position: fixed;
   left: 15px;
-  top: 50%;
+  bottom: 30px;
   z-index: 999;
   font-size: 0.75rem;
   color: rgba(255, 255, 255, 0.7);
@@ -219,6 +219,7 @@ body.bg-pillars::before {
 .image-credit a:hover {
   color: rgba(255, 255, 255, 1);
 }
+
 
 
 /* Responsive design */
@@ -255,5 +256,6 @@ body.bg-pillars::before {
   .image-credit {
     font-size: 0.65rem;
     left: 8px;
+    bottom: 20px;
   }
 }
