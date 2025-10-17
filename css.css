@@ -1,4 +1,3 @@
-
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
 @import url('https://fonts.googleapis.com/css?family=IM+Fell+English+SC');
 
@@ -30,7 +29,7 @@ body::before {
   left: 0;
   width: 100%;
   height: 30%;
-  background-image: 
+  background-image:
     radial-gradient(2px 2px at 20% 30%, white, transparent),
     radial-gradient(2px 2px at 60% 70%, white, transparent),
     radial-gradient(1px 1px at 50% 50%, white, transparent),
@@ -61,7 +60,7 @@ body::after {
 }
 
 /* Content wrapper to ensure text is above background elements */
-main, .content {
+main, .content, .nav {
   position: relative;
   z-index: 2;
   padding: 2rem;
@@ -80,6 +79,11 @@ li {
   margin-right: 10px; /* add spacing between items */
 }
 
+li a i {
+  margin-right: 8px; /* space between icon and text */
+}
+
 img {
   border-radius: 50%;
 }
+
