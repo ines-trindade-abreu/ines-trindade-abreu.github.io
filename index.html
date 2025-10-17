@@ -1,111 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inês da Trindade Abreu</title>
     <link rel="stylesheet" type="text/css" href="css.css">
-
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/katex.min.css" integrity="sha384-D+9gmBxUQogRLqvARvNLmA9hS2x//eK1FhVb9PiU86gmcrBrJAQT8okdJ4LMp2uv" crossorigin="anonymous">
-
-    <!-- The loading of KaTeX is deferred to speed up page rendering -->
-    <script src="https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/katex.min.js" integrity="sha384-483A6DwYfKeDa0Q52fJmxFXkcPCFfnXMoXblOkJ4JcA8zATN6Tm78UNL72AKk+0O" crossorigin="anonymous"></script>
-
-    <!-- To automatically render math in text elements, include the auto-render extension: -->
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/contrib/auto-render.min.js" integrity="sha384-yACMu8JWxKzSp/C1YV86pzGiQ/l1YUfE8oPuahJQxzehAjEt2GiQuy/BIvl9KyeF" crossorigin="anonymous"
-        onload="renderMathInElement(document.body);"></script>
 </head>
 
 <body>
-
-	<div class="nav">
-    <!--profile image & text-->
-    
-    <!--menu item-->
-    <ul>
-        <li>
-            <a href="https://ines-trindade-abreu.github.io/index.html">
-                <i class="fas fa-sun"></i> Home
-            </a>
-        </li>
-        <li>
-            <a href="https://ines-trindade-abreu.github.io/aboutme.html">
-                <i class="fas fa-moon"></i> About Me
-            </a>
-        </li>
-        <li>
-            <a href="https://ines-trindade-abreu.github.io/research.html">
-                <i class="fas fa-atom"></i> Research & Interests
-            </a>
-        </li>
-        <li>
-            <a href="https://ines-trindade-abreu.github.io/portfolio.html">
-                <i class="fas fa-planet"></i> Portfolio
-            </a>
-        </li>
-        <li>
-            <a href="https://ines-trindade-abreu.github.io/contact.html">
-                <i class="fas fa-comet"></i> Contact
-            </a>
-        </li>
-    </ul>
+    <!-- Navigation -->
+    <div class="nav">
+        <ul>
+            <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="aboutme.html"><i class="fas fa-user"></i> About Me</a></li>
+            <li><a href="research.html"><i class="fas fa-atom"></i> Research & Interests</a></li>
+            <li><a href="portfolio.html"><i class="fas fa-folder-open"></i> Portfolio</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+        </ul>
     </div>
 
-<hr>
-
-        <h1><center>Inês da Trindade Abreu <a href="https://orcid.org/0009-0000-8348-647X">
-            <img src="ORCIDiD_iconvector.svg" style="width:24px;height:24px;"></a> 
-			<a href="https://www.linkedin.com/in/inespontees/">
-            <img src="317750_linkedin_icon.svg" style="width:24px;height:24px;"></a></center></h1>
-		<h3><center>MS student in Engineering Physics at Técnico Lisboa.</center></h3>
-         
-	<center><img src="wedding.jpeg" width=220px height=220px;></center>  
-    
-	<div class="body">
-	
-	<p>
-        Welcome!
-    </p>
-    <p>
-        I am a graduate student in Physics at Técnico Lisboa, currently wrapping up both my BSc and my MS in Engineering Physics. Albeit unconventional, my academic journey blends hands-on laboratory work, computational analysis and simulation, and theoretical research.
-
-    </p>
-	
-	
-	<p>
-        My focus areas are Radiation and Nuclear Physics, with strong interests in Nuclear Astrophysics and medical applications. Throughout my master's, I have tailored my curriculum to include supporting fields such as Plasma Physics and Nanoelectronics, ensuring broad foundations for interdisciplinary research and innovation.
-        I am particularly interested in how nuclear processes drive cosmic phenomena, and how these mechanisms underpin transformative advances in medicine and energy production. Nuclear Physics, in particular, fascinates me both as a gateway to understanding the universe and as a source of clean energy for the future.
-	</p>
-
-	
-	<br>
-	<br>
-	You can find my resume <a href="inesabreu_resume_2025.pdf">here</a>.
-
-	<br>
-	<br>
-	</div>
-
-<hr>
-<div class="endnav">
-           	<center>
-            <!--menu item-->
-            <ul>
-			<li>
-			&copy <span id="currentYear"></span> Inês da Trindade Abreu
-				<script>
-				document.addEventListener('DOMContentLoaded', function() {
- 				var currentYear = new Date().getFullYear();
- 				document.getElementById('currentYear').textContent = currentYear;
-				});
-				</script>
-			</li>
-                
-            </ul>
-			</center>
-        </div>
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>Inês da Trindade Abreu</h1>
+            <p class="tagline">nuclear physics, astrophysics & everything in between</p>
             
+            <img src="wedding.jpeg" alt="Inês da Trindade Abreu" class="profile-img">
+            
+            <div class="social-links">
+                <a href="https://orcid.org/your-id" target="_blank" title="ORCID"><i class="fab fa-orcid"></i></a>
+                <a href="https://www.linkedin.com/in/inestrindadeabreu/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+
+        <!-- Introduction Section -->
+        <div class="content-section">
+            <h2>Welcome!</h2>
+            <p>I am a graduate student in <strong>Physics</strong> at <strong>Técnico Lisboa</strong>, currently wrapping up both my BSc and my MS in Engineering Physics. Albeit unconventional, my academic journey blends hands-on laboratory work, computational analysis and simulation, and theoretical research.</p>
+            
+            <p>My focus areas are <strong>Radiation and Nuclear Physics</strong>, with strong interests in <strong>Nuclear Astrophysics</strong> and medical applications. Throughout my master's, I have tailored my curriculum to include supporting fields such as Plasma Physics and Nanoelectronics, ensuring broad foundations for interdisciplinary research and innovation.</p>
+            
+            <p>I am particularly interested in how nuclear processes drive cosmic phenomena, and how these mechanisms underpin transformative advances in medicine and energy production. <strong>Nuclear Physics</strong>, in particular, fascinates me both as a gateway to understanding the universe and as a source of clean energy for the future.</p>
+        </div>
+    </div>
+
+    <!-- Floating Decorations (add your own images later) -->
+    <div class="floating-decorations">
+        <!-- Replace with your own space-themed images -->
+        <img src="planet.png" alt="Planet decoration">
+        <img src="comet.png" alt="Comet decoration">
+        <img src="moon.png" alt="Moon decoration">
+        <img src="star.png" alt="Star decoration">
+    </div>
 </body>
 </html>
