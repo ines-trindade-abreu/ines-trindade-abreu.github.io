@@ -17,21 +17,6 @@ body {
   overflow-x: hidden;
 }
 
-/* Carina Nebula background */
-body.bg-carina::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background-image: url('Carina_Nebula_by_Harel_Boren.jpg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  z-index: 0;
-}
-
 /* Pillars of Creation background */
 body.bg-pillars::before {
   content: '';
@@ -41,6 +26,81 @@ body.bg-pillars::before {
   width: 100%;
   height: 100vh;
   background-image: url('pillars_of_creation.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  z-index: 0;
+}
+
+/* Carina Nebula background */
+body.bg-carina::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-image: url('carina.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  z-index: 0;
+}
+
+/* Bubble Nebula background */
+body.bg-bubble::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-image: url('bubble.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  z-index: 0;
+}
+
+/* Orion Nebula background */
+body.bg-orion::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-image: url('orion.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  z-index: 0;
+}
+
+/* Eagle Nebula background */
+body.bg-eagle::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-image: url('eagle.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  z-index: 0;
+}
+
+/* Tarantula Nebula background */
+body.bg-tarantula::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-image: url('tarantula.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,81 +9,52 @@
     <link rel="stylesheet" type="text/css" href="css.css">
 </head>
 
-<body>
+<body class="bg-orion">
 
-	<div class="nav">
-    <!--profile image & text-->
-    
-    <!--menu item-->
-    <ul>
-        <li>
-            <a href="https://ines-trindade-abreu.github.io/index.html">
-                <i class="fas fa-sun"></i> Home
-            </a>
-        </li>
-        <li>
-            <a href="https://ines-trindade-abreu.github.io/aboutme.html">
-                <i class="fas fa-moon"></i> About Me
-            </a>
-        </li>
-        <li>
-            <a href="https://ines-trindade-abreu.github.io/research.html">
-                <i class="fas fa-atom"></i> Research & Interests
-            </a>
-        </li>
-        <li>
-            <a href="https://ines-trindade-abreu.github.io/portfolio.html">
-                <i class="fas fa-planet"></i> Portfolio
-            </a>
-        </li>
-        <li>
-            <a href="https://ines-trindade-abreu.github.io/contact.html">
-                <i class="fas fa-comet"></i> Contact
-            </a>
-        </li>
-    </ul>
+    <!-- Navigation -->
+    <div class="nav">
+        <ul>
+            <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="aboutme.html"><i class="fas fa-user"></i> About Me</a></li>
+            <li><a href="research.html"><i class="fas fa-atom"></i> Research & Interests</a></li>
+            <li><a href="portfolio.html"><i class="fas fa-folder-open"></i> Portfolio</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+        </ul>
     </div>
 
-<hr>
-
-        <h1>Research & Interests</h1>
-
-        <p>
-            I have recently completed the Integrated Project for my MS, titled "Quantitative and Qualitative Elemental Analysis via X-Ray Fluorescence for Materials' Characterization". I am now looking for a topic for my MS Dissertation, ideally in Stellar Nucleosynthesis
-        </p>
-
-        <h2>
-            Past Projects
-        </h2>
-        <p>
-            For my Bachelor's Integrated Project, I developed a program in C to model the diffusion and clearance of hydrogen peroxide in brain cells. This foundational work was subsequently advanced by another student and is currently being prepared for publication.
-        </p>
-        <p>
-            I have participated in many workshops and mini-courses in an attempt to broaden my horizons and finetune my research interests. For a comprehensive list, please consult my LinkedIn profile <a href="https://www.linkedin.com/in/inestrindadeabreu/details/experience/" target="_blank" rel="noopener noreferrer">here</a>.
-        </p>
-
-<br>
-	<br>
-	</div>
-
-<hr>
-<div class="endnav">
-           	<center>
-            <!--menu item-->
-            <ul>
-			<li>
-			&copy <span id="currentYear"></span> Inês da Trindade Abreu
-				<script>
-				document.addEventListener('DOMContentLoaded', function() {
- 				var currentYear = new Date().getFullYear();
- 				document.getElementById('currentYear').textContent = currentYear;
-				});
-				</script>
-			</li>
-                
-            </ul>
-			</center>
+<!-- Main Container -->
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>Research and Scientific Interests</h1>
+            <p class="tagline">From nuclei to nebulae: discovering the universe at every scale</p>
         </div>
-            
+
+        <!-- About Content -->
+        <div class="content-section">
+            <h2>Recent and ongoing projects</h2>
+            <p>I have recently completed the Integrated Project for my MS, titled "Quantitative and Qualitative Elemental Analysis via X-Ray Fluorescence for Materials' Characterization". I am now looking for a topic for my MS Dissertation, ideally in Stellar Nucleosynthesis</p>
+        </div>
+
+        <div class="content-section">
+            <h2>Past projects</h2>
+            <p>For my Bachelor's Integrated Project, I developed a program in C to model the diffusion and clearance of hydrogen peroxide in brain cells. This foundational work was subsequently advanced by another student and is currently being prepared for publication.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>Other academic pursuits</h2>
+            <p>I have participated in many workshops and mini-courses in an attempt to broaden my horizons and finetune my research interests. For a comprehensive list, please consult my LinkedIn profile <a href="https://www.linkedin.com/in/inestrindadeabreu/details/experience/" target="_blank" rel="noopener noreferrer">here</a>.</p>
+            <p>Comprehensive list coming soon to the website.</p>
+        </div>
+    </div>
+
+<!-- Image Credit -->
+    <div class="image-credit">
+        © <a href="https://esahubble.org/images/heic0601a/" target="_blank">NASA, ESA, M. Robberto (Space Telescope Science Institute/ESA) and the Hubble Space Telescope Orion Treasury Project Team.</a>
+    </div>
 </body>
-</html>
+</html> 
+
+
+
+

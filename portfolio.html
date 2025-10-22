@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,73 +9,45 @@
     <link rel="stylesheet" type="text/css" href="css.css">
 </head>
 
-<body>
+<body class="bg-eagle">
 
-	<div class="nav">
-    <!--profile image & text-->
-    
-    <!--menu item-->
-    <ul>
-        <li>
-            <a href="https://ines-trindade-abreu.github.io/index.html">
-                <i class="fas fa-sun"></i> Home
-            </a>
-        </li>
-        <li>
-            <a href="https://ines-trindade-abreu.github.io/aboutme.html">
-                <i class="fas fa-moon"></i> About Me
-            </a>
-        </li>
-        <li>
-            <a href="https://ines-trindade-abreu.github.io/research.html">
-                <i class="fas fa-atom"></i> Research & Interests
-            </a>
-        </li>
-        <li>
-            <a href="https://ines-trindade-abreu.github.io/portfolio.html">
-                <i class="fas fa-planet"></i> Portfolio
-            </a>
-        </li>
-        <li>
-            <a href="https://ines-trindade-abreu.github.io/contact.html">
-                <i class="fas fa-comet"></i> Contact
-            </a>
-        </li>
-    </ul>
+    <!-- Navigation -->
+    <div class="nav">
+        <ul>
+            <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="aboutme.html"><i class="fas fa-user"></i> About Me</a></li>
+            <li><a href="research.html"><i class="fas fa-atom"></i> Research & Interests</a></li>
+            <li><a href="portfolio.html"><i class="fas fa-folder-open"></i> Portfolio</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+        </ul>
     </div>
 
-<hr>
-
-        <h1>Portfolio</h1>
-        <p>
-            Portfolio
-        </p>
-
-<br>
-	<br>
-	</div>
-
-<hr>
-<div class="endnav">
-           	<center>
-            <!--menu item-->
-            <ul>
-			<li>
-			&copy <span id="currentYear"></span> Inês da Trindade Abreu
-				<script>
-				document.addEventListener('DOMContentLoaded', function() {
- 				var currentYear = new Date().getFullYear();
- 				document.getElementById('currentYear').textContent = currentYear;
-				});
-				</script>
-			</li>
-                
-            </ul>
-			</center>
+<!-- Main Container -->
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>Portfolio</h1>
+            <p class="tagline">A sample of my work in different organizations.</p>
         </div>
-            
-</body>
-</html>
 
+        <!-- About Content -->
+        <div class="content-section">
+            <h2>Nuclear Vision Portugal</h2>
+            <p>Some of the articles I wrote for NVP. Most of them were originally written and published in Portuguese; I'm currently working on translations to English.</p>
+            <p>Coming soon.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>ASTRO - NFIST</h2>
+            <p>Coming soon.</p>
+        </div>
+    </div>
+
+<!-- Image Credit -->
+    <div class="image-credit">
+        © <a href="https://esahubble.org/images/heic0506b/" target="_blank">NASA, ESA/Hubble and the Hubble Heritage Team (STScI/AURA)</a>
+    </div>
 </body>
-</html>
+</html> 
+
+
