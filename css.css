@@ -102,7 +102,7 @@ body.bg-tarantula::before {
   height: 100vh;
   background-image: url('tarantula.jpg');
   background-size: cover;
-  background-position: center;
+  background-position: top center;
   background-attachment: fixed;
   z-index: 0;
 }
