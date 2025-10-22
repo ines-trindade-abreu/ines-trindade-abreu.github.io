@@ -109,15 +109,16 @@ body.bg-tarantula::before {
 
 /* Navigation */
 .nav {
+  background-color: rgba(10, 22, 40, 0.4); /* semi-transparent dark overlay */
+  backdrop-filter: blur(8px); /* blur effect behind */
+  -webkit-backdrop-filter: blur(8px); /* for Safari */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 1.5rem 2rem;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(10, 22, 40, 0.98);
-  backdrop-filter: blur(10px);
-  padding: 1.5rem 2rem;
   z-index: 1000;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .nav ul {
