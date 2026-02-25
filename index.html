@@ -1,57 +1,311 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inês da Trindade Abreu</title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
-    <link rel="stylesheet" href="css/css.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Personal website of Inês da Trindade Abreu — graduate researcher in physics and history of science.">
+
+  <title>The Main Hall — Inês da Trindade Abreu</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="bg-pillars">
+<body>
 
-    <!-- Navigation -->
-    <div class="nav">
-        <ul>
-            <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-            <li><a href="aboutme.html"><i class="fas fa-user"></i> About Me</a></li>
-            <li><a href="research.html"><i class="fas fa-atom"></i> Research & Interests</a></li>
-            <li><a href="portfolio.html"><i class="fas fa-folder-open"></i> Portfolio</a></li>
-            <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
-        </ul>
+  <!-- ============================================================
+       NAVIGATION
+       ============================================================ -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+
+    <!-- Logo — links to index, hidden from nav link list -->
+    <a href="index.html" class="navbar-logo" aria-label="Return to Main Hall">
+      Inês da Trindade Abreu <span>✦</span>
+    </a>
+
+    <!-- Page links -->
+    <ul class="navbar-links" id="navbar-links">
+      <li><a href="about.html">Common Room</a></li>
+      <li><a href="research.html">Cabinet of Curiosities</a></li>
+      <li><a href="portfolio.html">Library</a></li>
+      <li><a href="contact.html">Mail Room</a></li>
+    </ul>
+
+    <!-- Right controls -->
+    <div class="navbar-controls">
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+        <i class="fas fa-moon"></i>
+      </button>
+      <button class="navbar-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navbar-links">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
 
-    <!-- Main Container -->
-    <div class="container">
-        <!-- Hero Section -->
-        <div class="hero">
-            <h1>Inês da Trindade Abreu</h1>
-            <p class="tagline">Nuclei, stars, and the road to Mars.</p>
-            
-            <img src="../images/wedding.jpeg" alt="Inês da Trindade Abreu" class="profile-img">
-            
-            <div class="social-links">
-                <a href="https://orcid.org/your-id" target="_blank" title="ORCID"><i class="fab fa-orcid"></i></a>
-                <a href="https://www.linkedin.com/in/inestrindadeabreu/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+  </nav>
+
+
+  <!-- ============================================================
+       MAIN CONTENT
+       ============================================================ -->
+  <main class="page-content">
+
+
+    <!-- ── HERO ─────────────────────────────────────────────── -->
+    <section class="hero-index" aria-labelledby="hero-heading">
+
+      <!-- Decorative parchment motif -->
+      <div class="ornament-divider gold-shimmer" aria-hidden="true">✦ ✦ ✦</div>
+
+      <span class="section-label">Welcome to the</span>
+      <h1 id="hero-heading">Inês da Trindade Abreu</h1>
+
+      <p class="hero-tagline">
+        Graduate researcher in physics &amp; history of science.<br>
+        <em>Nucleosynthesis, networks, and the long history of ideas.</em>
+      </p>
+
+      <div class="hero-cta">
+        <a href="research.html" class="btn btn-primary">
+          <i class="fas fa-flask"></i>&nbsp; Enter the Cabinet
+        </a>
+        <a href="portfolio.html" class="btn btn-outline">
+          <i class="fas fa-book-open"></i>&nbsp; Visit the Library
+        </a>
+      </div>
+
+      <div class="ornament-divider" aria-hidden="true" style="margin-top: 3rem;">❧</div>
+
+    </section>
+
+
+    <!-- ── ROOM NAVIGATION ──────────────────────────────────── -->
+    <section class="section" aria-labelledby="rooms-heading">
+      <div class="container">
+
+        <span class="section-label">The Manor</span>
+        <h2 class="section-title ornament-heading" id="rooms-heading">Choose Your Room</h2>
+
+        <nav class="hall-nav-grid stagger-children" aria-label="Room navigation">
+
+          <a href="about.html" class="hall-nav-card">
+            <span class="room-icon" aria-hidden="true">🪑</span>
+            <h3>Common Room</h3>
+            <p>Who I am, where I come from, and what I think about.</p>
+          </a>
+
+          <a href="research.html" class="hall-nav-card">
+            <span class="room-icon" aria-hidden="true">🔭</span>
+            <h3>Cabinet of Curiosities</h3>
+            <p>Research projects, publications, and ongoing enquiries.</p>
+          </a>
+
+          <a href="portfolio.html" class="hall-nav-card">
+            <span class="room-icon" aria-hidden="true">📚</span>
+            <h3>Library</h3>
+            <p>Code, writing, and other things I have made.</p>
+          </a>
+
+          <a href="contact.html" class="hall-nav-card">
+            <span class="room-icon" aria-hidden="true">✉️</span>
+            <h3>Mail Room</h3>
+            <p>Send a letter. I will write back.</p>
+          </a>
+
+        </nav>
+
+      </div>
+    </section>
+
+
+    <!-- ── BRIEF INTRODUCTION ───────────────────────────────── -->
+    <section class="section section-alt" aria-labelledby="intro-heading">
+      <div class="container">
+
+        <div class="two-col-narrow">
+
+          <!-- Portrait -->
+          <div class="reveal" style="display: flex; flex-direction: column; align-items: center; gap: 1.2rem;">
+            <img
+              src="assets/img/portrait.jpg"
+              alt="Portrait of [Your Name]"
+              class="profile-portrait"
+              width="190" height="190"
+            >
+            <div class="skills-list" style="justify-content: center;">
+              <span class="tag tag-green">Nuclear Physics</span>
+              <span class="tag tag-purpura">History of Science</span>
+              <span class="tag tag-gold">Network Science</span>
+              <span class="tag tag-green">Knowledge Diffusion</span>
             </div>
+          </div>
+
+          <!-- Text -->
+          <div class="reveal">
+            <span class="section-label">In Brief</span>
+            <h2 id="intro-heading">A Wanderer Between Disciplines</h2>
+
+            <p class="drop-cap">
+              I am a graduate researcher at Técnico Lisboa, working at the intersection
+              of nuclear astrophysics and the history and philosophy of science. My work
+              concerns how knowledge is made, transmitted, and transformed — from the
+              interior of stars to the networks of scholars who first decoded them.
+            </p>
+
+            <p>
+              Alongside my research, I write code, build things, and spend a perhaps
+              unreasonable amount of time thinking about medieval manuscripts, spectral
+              lines, and the long biography of the atom.
+            </p>
+
+            <div style="margin-top: 1.5rem; display: flex; gap: 0.8rem; flex-wrap: wrap;">
+              <a href="about.html" class="btn btn-ghost">
+                <i class="fas fa-user"></i>&nbsp; More about me
+              </a>
+              <a href="contact.html" class="btn btn-ghost">
+                <i class="fas fa-envelope"></i>&nbsp; Get in touch
+              </a>
+            </div>
+          </div>
+
         </div>
 
-        <!-- Introduction Section -->
-        <div class="content-section">
-            <h2>Welcome!</h2>
-            <p>I am a graduate student in <strong>Physics</strong> at <strong>Técnico Lisboa</strong>, currently wrapping up both my BSc and my MS in Engineering Physics. Albeit unconventional, my academic journey blends hands-on laboratory work, computational analysis and simulation, and theoretical research.</p>
-            
-            <p>My focus areas are <strong>Radiation and Nuclear Physics</strong>, with strong interests in <strong>Nuclear Astrophysics</strong> and medical applications. Throughout my master's, I have tailored my curriculum to include supporting fields such as Plasma Physics and Nanoelectronics, ensuring broad foundations for interdisciplinary research and innovation.</p>
-            
-            <p>I am particularly interested in how nuclear processes drive cosmic phenomena, and how these mechanisms underpin transformative advances in medicine and energy production. <strong>Nuclear Physics</strong>, in particular, fascinates me both as a gateway to understanding the universe and as a source of clean energy for the future.</p>
-        </div>
-    </div>
+      </div>
+    </section>
 
- 
-    <!-- Image Credit -->
-    <div class="image-credit">
-        © <a href="https://esahubble.org/images/heic1501a/" target="_blank">NASA, ESA/Hubble <br> and the Hubble Heritage Team</a>
+
+    <!-- ── RECENT HIGHLIGHTS ────────────────────────────────── -->
+    <section class="section" aria-labelledby="highlights-heading">
+      <div class="container">
+
+        <span class="section-label">Latest</span>
+        <h2 class="section-title" id="highlights-heading">Recent Work</h2>
+
+        <div class="card-grid stagger-children">
+
+          <article class="card card-ornament reveal">
+            <div class="card-icon"><i class="fas fa-atom"></i></div>
+            <div class="research-meta">
+              <span class="research-status status-active">Active</span>
+              <span class="tag tag-green">Astrophysics</span>
+            </div>
+            <h3>Stellar Nucleosynthesis</h3>
+            <p>
+              Investigating the production of heavy elements in stellar interiors
+              and the observational signatures of nucleosynthetic pathways.
+            </p>
+            <div style="margin-top: 1rem;">
+              <a href="research.html" class="btn btn-ghost" style="font-size: 0.82rem; padding: 0.4rem 0.9rem;">
+                Read more <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </article>
+
+          <article class="card card-ornament reveal">
+            <div class="card-icon"><i class="fas fa-project-diagram"></i></div>
+            <div class="research-meta">
+              <span class="research-status status-active">Active</span>
+              <span class="tag tag-purpura">History of Science</span>
+            </div>
+            <h3>Networks of Knowledge</h3>
+            <p>
+              Modelling the diffusion of scientific ideas through citation networks
+              and epistemic communities from the early modern period to the present.
+            </p>
+            <div style="margin-top: 1rem;">
+              <a href="research.html" class="btn btn-ghost" style="font-size: 0.82rem; padding: 0.4rem 0.9rem;">
+                Read more <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </article>
+
+          <article class="card card-ornament reveal">
+            <div class="card-icon"><i class="fas fa-code"></i></div>
+            <div class="research-meta">
+              <span class="research-status status-completed">Completed</span>
+              <span class="tag tag-gold">Web</span>
+            </div>
+            <h3>ESPANTO / SPECTRA</h3>
+            <p>
+              A spectral analysis tool for elemental identification,
+              developed as part of an ongoing research internship in
+              materials characterisation.
+            </p>
+            <div style="margin-top: 1rem;">
+              <a href="portfolio.html" class="btn btn-ghost" style="font-size: 0.82rem; padding: 0.4rem 0.9rem;">
+                See in Library <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ── CLOSING QUOTE ────────────────────────────────────── -->
+    <section class="section section-alt">
+      <div class="container" style="max-width: 700px;">
+        <blockquote class="iluminura-border reveal">
+          "The history of science is the story of the progressive
+          liberation of the human mind from its own parochialisms."
+          <br><br>
+          <strong>— George Sarton</strong>
+        </blockquote>
+      </div>
+    </section>
+
+
+  </main>
+
+
+  <!-- ============================================================
+       SCROLL-TO-TOP BUTTON
+       ============================================================ -->
+  <button id="scroll-top" aria-label="Scroll to top" title="Back to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer>
+    <div class="footer-inner">
+
+      <span class="footer-logo">Inês da Trindade Abreu <span style="color: var(--gold);">✦</span></span>
+
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="about.html">Common Room</a>
+        <a href="research.html">Cabinet of Curiosities</a>
+        <a href="portfolio.html">Library</a>
+        <a href="contact.html">Mail Room</a>
+      </nav>
+
     </div>
+    <p class="footer-copy">
+      © <span id="footer-year"></span> Inês da Trindade Abreu · Built with parchment and curiosity.
+    </p>
+  </footer>
+
+
+  <!-- ============================================================
+       SCRIPTS
+       ============================================================ -->
+  <script src="js/main.js" defer></script>
+  <script>
+    // Auto-update copyright year
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+  </script>
+
 </body>
 </html>
