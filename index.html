@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Personal website of Inês da Trindade Abreu — graduate researcher in physics and history of science.">
 
-  <title>The Main Hall — Inês da Trindade Abreu</title> ##title shows up on the bar at the top of the browser window##
+  <title>The Main Hall — Inês da Trindade Abreu</title>
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
@@ -25,12 +25,10 @@
        ============================================================ -->
   <nav class="navbar" role="navigation" aria-label="Main navigation">
 
-    <!-- Logo — links to index, hidden from nav link list -->
     <a href="index.html" class="navbar-logo" aria-label="Return to Main Hall">
       Inês da Trindade Abreu <span>✦</span>
     </a>
 
-    <!-- Page links -->
     <ul class="navbar-links" id="navbar-links">
       <li><a href="about.html">Common Room</a></li>
       <li><a href="research.html">Cabinet of Curiosities</a></li>
@@ -38,7 +36,6 @@
       <li><a href="contact.html">Mail Room</a></li>
     </ul>
 
-    <!-- Right controls -->
     <div class="navbar-controls">
       <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
         <i class="fas fa-moon"></i>
@@ -62,7 +59,6 @@
     <!-- ── HERO ─────────────────────────────────────────────── -->
     <section class="hero-index" aria-labelledby="hero-heading">
 
-      <!-- Decorative parchment motif -->
       <div class="ornament-divider gold-shimmer" aria-hidden="true">✦ ✦ ✦</div>
 
       <span class="section-label">Welcome!</span>
@@ -142,8 +138,9 @@
             >
             <div class="skills-list" style="justify-content: center;">
               <span class="tag tag-green">Nuclear Physics</span>
+              <span class="tag tag-navy">Network Science</span>
               <span class="tag tag-purpura">History of Science</span>
-              <span class="tag tag-gold">Knowledge Diffusion</span>
+              <span class="tag tag-burgundy">Knowledge Diffusion</span>
             </div>
           </div>
 
@@ -153,17 +150,25 @@
             <h2 id="intro-heading">A Wanderer Between Disciplines</h2>
 
             <p class="drop-cap">
-              I am a graduate student in <strong>Physics</strong> at <strong>Técnico Lisboa</strong>, currently wrapping up both my BSc and my MS in Engineering Physics. Albeit unconventional, my academic journey blends hands-on laboratory work, computational analysis and simulation, and theoretical research.
+              I am a graduate student in <strong>Physics</strong> at <strong>Técnico Lisboa</strong>,
+              currently wrapping up both my BSc and my MS in Engineering Physics. Albeit unconventional,
+              my academic journey blends hands-on laboratory work, computational analysis and simulation,
+              and theoretical research.
             </p>
 
             <p>
-                I'm currently working at the intersection
-              of nuclear physics and network science, to investigate how knowledge diffuses through scholarly networks. My work concerns how knowledge is made, transmitted, and transformed, particulary in the context of women in science and their struggle to be recognized as full members of the scientific community.
+              I'm currently working at the intersection of nuclear physics and network science, to
+              investigate how knowledge diffuses through scholarly networks. My work concerns how
+              knowledge is made, transmitted, and transformed, particularly in the context of women
+              in science and their struggle to be recognized as full members of the scientific community.
             </p>
 
             <p>
-              Alongside my research, I write code as a freelance web developer, read a lot of books on a variety of subjects, travel way too little to my heart's content, and spend a perhaps
-              unreasonable amount of time thinking about medieval manuscripts and people who died centuries ago. I have a soft spot for libraries, archives, and all things old and dusty, and I am fascinated by the history of science and the evolution of scientific ideas.
+              Alongside my research, I write code as a freelance web developer, read a lot of books
+              on a variety of subjects, travel way too little to my heart's content, and spend a perhaps
+              unreasonable amount of time thinking about medieval manuscripts and people who died
+              centuries ago. I have a soft spot for libraries, archives, and all things old and dusty,
+              and I am fascinated by the history of science and the evolution of scientific ideas.
             </p>
 
             <div style="margin-top: 1.5rem; display: flex; gap: 0.8rem; flex-wrap: wrap;">
@@ -192,14 +197,18 @@
         <div class="card-grid stagger-children">
 
           <article class="card card-ornament reveal">
-            <div class="card-icon"><i class="fas fa-atom"></i></div>
+            <div class="card-icon" style="background: var(--navy-pale); color: var(--navy);">
+              <i class="fas fa-atom"></i>
+            </div>
             <div class="research-meta">
               <span class="research-status status-active">Active</span>
               <span class="tag tag-green">Nuclear Physics</span>
             </div>
             <h3>Manhattan Project</h3>
             <p>
-              Series of articles on the Manhattan Project, exploring the scientific, social, and political dimensions of this pivotal moment in history. Currently being published in the Nuclear Vision Portugal newsletter and available on this website as well.
+              Series of articles on the Manhattan Project, exploring the scientific, social, and
+              political dimensions of this pivotal moment in history. Currently being published in
+              the Nuclear Vision Portugal newsletter and available on this website as well.
             </p>
             <div style="margin-top: 1rem;">
               <a href="portfolio.html" class="btn btn-ghost" style="font-size: 0.82rem; padding: 0.4rem 0.9rem;">
@@ -209,14 +218,18 @@
           </article>
 
           <article class="card card-ornament reveal">
-            <div class="card-icon"><i class="fas fa-project-diagram"></i></div>
+            <div class="card-icon" style="background: var(--purpura-pale); color: var(--purpura);">
+              <i class="fas fa-project-diagram"></i>
+            </div>
             <div class="research-meta">
               <span class="research-status status-active">Active</span>
               <span class="tag tag-purpura">History of Science</span>
             </div>
-            <h3>MSc Thesis - Knowledge Diffusion (Pending Approval)</h3>
+            <h3>MSc Thesis — Knowledge Diffusion</h3>
             <p>
-              "At the Origin Node: A Temporal Network Analysis of Knowledge Diffusion in the Radioactivity Community, 1898– 1938" — an investigation of the diffusion of scientific knowledge through citation networks, with a particular focus on the role of Mme. Curie.
+              "At the Origin Node: A Temporal Network Analysis of Knowledge Diffusion in the
+              Radioactivity Community, 1898–1938" — an investigation of the diffusion of scientific
+              knowledge through citation networks, with a particular focus on the role of Mme. Curie.
             </p>
             <div style="margin-top: 1rem;">
               <a href="portfolio.html" class="btn btn-ghost" style="font-size: 0.82rem; padding: 0.4rem 0.9rem;">
@@ -226,14 +239,18 @@
           </article>
 
           <article class="card card-ornament reveal">
-            <div class="card-icon"><i class="fas fa-code"></i></div>
+            <div class="card-icon" style="background: var(--burgundy-pale); color: var(--burgundy);">
+              <i class="fas fa-scroll"></i>
+            </div>
             <div class="research-meta">
               <span class="research-status status-completed">Completed</span>
-              <span class="tag tag-gold">Nuclear Physics</span>
+              <span class="tag tag-burgundy">Nuclear Physics</span>
             </div>
             <h3>History of Uranium</h3>
             <p>
-              A two part article series on the history of uranium, from its discovery to its role in the development of nuclear energy and weapons. Published in the Nuclear Vision Portugal newsletter and available on this website as well.
+              A two-part article series on the history of uranium, from its discovery to its role
+              in the development of nuclear energy and weapons. Published in the Nuclear Vision
+              Portugal newsletter and available on this website as well.
             </p>
             <div style="margin-top: 1rem;">
               <a href="portfolio.html" class="btn btn-ghost" style="font-size: 0.82rem; padding: 0.4rem 0.9rem;">
@@ -298,7 +315,6 @@
        ============================================================ -->
   <script src="js/main.js" defer></script>
   <script>
-    // Auto-update copyright year
     document.getElementById('footer-year').textContent = new Date().getFullYear();
   </script>
 
