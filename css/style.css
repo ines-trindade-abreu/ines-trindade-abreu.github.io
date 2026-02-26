@@ -459,7 +459,6 @@ code {
   z-index: 1;
 }
 
-/* Index hero — full-screen parchment */
 .hero-index {
   min-height: 100vh;
   display: flex;
@@ -468,14 +467,45 @@ code {
   justify-content: center;
   text-align: center;
   padding: clamp(2rem, 6vw, 5rem) clamp(1rem, 4vw, 3rem);
-  background:
-    radial-gradient(ellipse at 25% 40%, rgba(201, 168,  76, 0.10) 0%, transparent 55%),
-    radial-gradient(ellipse at 75% 60%, rgba(107,  26,  42, 0.08) 0%, transparent 55%),
-    radial-gradient(ellipse at 50% 80%, rgba( 27,  42,  74, 0.08) 0%, transparent 50%),
-    var(--bg-primary);
   position: relative;
   overflow: hidden;
+
+  /* Manuscript image as background */
+  background-image: url('../images/manuscript.jpg');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* parallax feel — remove if too heavy on mobile */
 }
+
+/* Parchment wash overlay — keeps text legible, tints to theme */
+.hero-index::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(245, 240, 232, 0.82) 0%,
+      rgba(245, 240, 232, 0.70) 50%,
+      rgba(245, 240, 232, 0.88) 100%
+    );
+  z-index: 0;
+}
+
+/* Dark mode overlay — deeper tint so text still reads */
+[data-theme="dark"] .hero-index::before {
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(26, 22, 16, 0.82) 0%,
+      rgba(26, 22, 16, 0.70) 50%,
+      rgba(26, 22, 16, 0.88) 100%
+    );
+}
+
+/* All direct children sit above the overlay */
+.hero-index > * { position: relative; z-index: 1; }
 
 .hero-index h1 {
   font-size: clamp(2.5rem, 7vw, 5rem);
