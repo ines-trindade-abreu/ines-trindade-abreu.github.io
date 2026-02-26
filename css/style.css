@@ -826,6 +826,7 @@ code {
 }
 
 
+
 /* ============================================================
    9. ILUMINURA & ORNAMENT ACCENTS
    ============================================================ */
@@ -841,28 +842,13 @@ code {
   text-shadow: 2px 2px 0 var(--gold);
 }
 
-/* Ornamental section heading */
-.ornament-heading {
-  display: inline-block;
-  position: relative;
-  padding-bottom: 0.4rem;
-}
 
-.ornament-heading::after {
-  content: '— ✦ —';
-  display: block;
-  text-align: center;
-  color: var(--gold);
-  font-size: 0.85rem;
-  letter-spacing: 0.2em;
-  margin-top: 0.9rem;
-}
 
-/* Fleuron corner mark */
+/* Star corner mark */
 .card-ornament { position: relative; }
 
 .card-ornament::after {
-  content: '❧';
+  content: '✦✦';
   position: absolute;
   bottom: 0.8rem; right: 1rem;
   font-size: 1.4rem;
@@ -914,6 +900,26 @@ code {
   vertical-align: middle;
 }
 
+/* Star cluster — used under headings and in dividers */
+.star-cluster {
+  display: block;
+  text-align: center;
+  margin-top: 0.9rem;
+  line-height: 1;
+  color: var(--gold);
+}
+
+.star-sm {
+  font-size: 0.7em;
+  opacity: 0.75;
+  vertical-align: middle;
+}
+
+.star-lg {
+  font-size: 1.4em;
+  vertical-align: middle;
+  margin: 0 0.05em;
+}
 
 /* ============================================================
    10a. MAIN HALL — index.html
