@@ -35,20 +35,33 @@
   --bg-card:      #FAF7F2;
   --bg-overlay:   rgba(245, 240, 232, 0.92);
 
-  /* Botanical greens */
-  --green-dark:   #2D5016;
-  --green-mid:    #3E7B27;
-  --teal:         #2A6B6B;
-  --teal-light:   #3D9B9B;
+  /* 1. Botanical green */
+  --green-dark:  #2D5016;
+  --green-mid:   #3E7B27;
 
-  /* Purpura — regal accent */
-  --purpura:        #6B2D6B;
-  --purpura-light:  #9B4D9B;
-  --purpura-pale:   #F0E6F0;
+  /* 2. Teal */
+  --teal:        #2A6B6B;
+  --teal-light:  #3D9B9B;
 
-  /* Gold — illuminura accent */
-  --gold:       #C9A84C;
-  --gold-dark:  #8B6914;
+  /* 3. Purpura */
+  --purpura:       #6B2D6B;
+  --purpura-light: #9B4D9B;
+  --purpura-pale:  #F0E6F0;
+
+  /* 4. Dark navy blue */
+  --navy:        #1B2A4A;
+  --navy-mid:    #2E4A7A;
+  --navy-light:  #4A6FA5;
+  --navy-pale:   #E8EDF5;
+
+  /* 5. Burgundy */
+  --burgundy:      #6B1A2A;
+  --burgundy-mid:  #9B2A3E;
+  --burgundy-pale: #F5E8EB;
+
+  /* Gold — structural/ornamental */
+  --gold:      #C9A84C;
+  --gold-dark: #8B6914;
 
   /* Text */
   --text-primary:   #1C1C1A;
@@ -84,26 +97,45 @@
   --bg-card:      #2A2418;
   --bg-overlay:   rgba(26, 22, 16, 0.92);
 
-  --green-dark:  #4A8A2A;
-  --green-mid:   #5FAA40;
+  /* 1. Botanical green — muted, not neon */
+  --green-dark:  #4A7A28;
+  --green-mid:   #5A9030;
+
+  /* 2. Teal */
   --teal:        #3A9B9B;
   --teal-light:  #55BBBB;
 
+  /* 3. Purpura */
   --purpura:       #9B4D9B;
   --purpura-light: #C070C0;
   --purpura-pale:  #2A1A2A;
 
+  /* 4. Navy — lightened for dark bg legibility */
+  --navy:        #4A6FA5;
+  --navy-mid:    #5A85BF;
+  --navy-light:  #7AA0D0;
+  --navy-pale:   #151E2E;
+
+  /* 5. Burgundy — lightened for dark bg legibility */
+  --burgundy:      #B03050;
+  --burgundy-mid:  #CC4A65;
+  --burgundy-pale: #2A1218;
+
+  /* Gold */
   --gold:      #D4B060;
   --gold-dark: #B08830;
 
+  /* Text */
   --text-primary:   #F0EAD6;
   --text-secondary: #C8B99A;
   --text-muted:     #8A7E6A;
   --text-inverse:   #1A1610;
 
+  /* Borders */
   --border-color: #4A3E2A;
   --border-light: #3A3020;
 
+  /* Shadows */
   --shadow-sm: 0 2px 8px  rgba(0, 0, 0, 0.30);
   --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.40);
   --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.50);
@@ -160,7 +192,7 @@ button {
 }
 
 ::selection {
-  background: var(--purpura);
+  background: var(--burgundy);
   color: var(--text-inverse);
 }
 
@@ -179,13 +211,12 @@ button {
 h1, h2, h3 {
   font-family: 'IM Fell English', 'Georgia', serif;
   line-height: 1.25;
-  color: var(--green-dark);
   letter-spacing: 0.01em;
 }
 
-h1 { font-size: clamp(2rem,   5vw, 3.5rem); }
-h2 { font-size: clamp(1.5rem, 3.5vw, 2.4rem); margin-bottom: 1rem; }
-h3 { font-size: clamp(1.15rem,2.5vw, 1.6rem); margin-bottom: 0.6rem; }
+h1 { font-size: clamp(2rem,    5vw, 3.5rem);  color: var(--green-dark); }
+h2 { font-size: clamp(1.5rem,  3.5vw, 2.4rem); margin-bottom: 1rem;    color: var(--navy);     }
+h3 { font-size: clamp(1.15rem, 2.5vw, 1.6rem); margin-bottom: 0.6rem;  color: var(--burgundy); }
 
 h4, h5, h6 {
   font-family: 'Nunito', sans-serif;
@@ -207,7 +238,7 @@ p:last-child { margin-bottom: 0; }
 strong { font-weight: 600; color: var(--text-primary); }
 em     { font-style: italic; color: var(--text-secondary); }
 
-/* Section title with gradient underline */
+/* Section title — display heading, keeps green */
 .section-title {
   font-family: 'IM Fell English', serif;
   color: var(--green-dark);
@@ -222,7 +253,7 @@ em     { font-style: italic; color: var(--text-secondary); }
   display: block;
   width: 60px;
   height: 2px;
-  background: linear-gradient(to right, var(--gold), var(--purpura));
+  background: linear-gradient(to right, var(--gold), var(--burgundy), var(--purpura));
   margin: 0.6rem auto 0;
   border-radius: 2px;
 }
@@ -256,7 +287,7 @@ code {
   padding: 0.1em 0.4em;
   border-radius: 3px;
   font-size: 0.9em;
-  color: var(--purpura);
+  color: var(--navy);
 }
 
 
@@ -289,8 +320,8 @@ code {
   white-space: nowrap;
 }
 
-.navbar-logo:hover  { color: var(--purpura); }
-.navbar-logo span   { color: var(--gold); }
+.navbar-logo:hover { color: var(--burgundy); }
+.navbar-logo span  { color: var(--gold); }
 
 /* Nav links */
 .navbar-links {
@@ -356,16 +387,9 @@ code {
   transition: var(--transition-normal);
 }
 
-/* Animated hamburger → X */
-.navbar-toggle.open span:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
-}
-.navbar-toggle.open span:nth-child(2) {
-  opacity: 0;
-}
-.navbar-toggle.open span:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
-}
+.navbar-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.navbar-toggle.open span:nth-child(2) { opacity: 0; }
+.navbar-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 
 /* ============================================================
@@ -418,15 +442,12 @@ code {
   position: absolute;
   inset: 0;
   background-image:
-    radial-gradient(circle at 20% 50%, rgba(107,  45, 107, 0.06) 0%, transparent 60%),
-    radial-gradient(circle at 80% 50%, rgba( 45,  80,  22, 0.06) 0%, transparent 60%);
+    radial-gradient(circle at 20% 50%, rgba(107, 26,  42, 0.06) 0%, transparent 60%),
+    radial-gradient(circle at 80% 50%, rgba( 27, 42,  74, 0.06) 0%, transparent 60%);
   pointer-events: none;
 }
 
-.page-hero h1 {
-  position: relative;
-  z-index: 1;
-}
+.page-hero h1 { position: relative; z-index: 1; }
 
 .page-hero p.subtitle {
   font-size: 1.15rem;
@@ -448,8 +469,9 @@ code {
   text-align: center;
   padding: clamp(2rem, 6vw, 5rem) clamp(1rem, 4vw, 3rem);
   background:
-    radial-gradient(ellipse at 30% 40%, rgba(201, 168,  76, 0.12) 0%, transparent 55%),
-    radial-gradient(ellipse at 70% 60%, rgba(107,  45, 107, 0.10) 0%, transparent 55%),
+    radial-gradient(ellipse at 25% 40%, rgba(201, 168,  76, 0.10) 0%, transparent 55%),
+    radial-gradient(ellipse at 75% 60%, rgba(107,  26,  42, 0.08) 0%, transparent 55%),
+    radial-gradient(ellipse at 50% 80%, rgba( 27,  42,  74, 0.08) 0%, transparent 50%),
     var(--bg-primary);
   position: relative;
   overflow: hidden;
@@ -548,10 +570,10 @@ code {
 }
 
 /* Grids */
-.card-grid     { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
-.card-grid-2   { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
-.two-col       { display: grid; grid-template-columns: 1fr 1fr;   gap: 3rem; align-items: start; }
-.two-col-narrow{ display: grid; grid-template-columns: 2fr 3fr;   gap: 3rem; align-items: start; }
+.card-grid      { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+.card-grid-2    { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+.two-col        { display: grid; grid-template-columns: 1fr 1fr;  gap: 3rem; align-items: start; }
+.two-col-narrow { display: grid; grid-template-columns: 2fr 3fr;  gap: 3rem; align-items: start; }
 
 /* Card base */
 .card {
@@ -569,7 +591,14 @@ code {
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 3px;
-  background: linear-gradient(to right, var(--green-dark), var(--purpura));
+  background: linear-gradient(
+    to right,
+    var(--green-dark),
+    var(--teal),
+    var(--navy),
+    var(--burgundy),
+    var(--purpura)
+  );
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -598,7 +627,7 @@ code {
   color: var(--purpura);
 }
 
-/* Tags / badges */
+/* Tags */
 .tag {
   display: inline-block;
   font-family: 'Nunito', sans-serif;
@@ -614,9 +643,12 @@ code {
   margin: 0.2rem;
 }
 
-.tag-purpura { background: var(--purpura-pale);        color: var(--purpura);   border-color: var(--purpura);       }
-.tag-green   { background: rgba(45, 80, 22, 0.08);     color: var(--green-dark);border-color: var(--green-mid);     }
-.tag-gold    { background: rgba(201, 168, 76, 0.12);   color: var(--gold-dark); border-color: var(--gold);          }
+.tag-green    { background: rgba(45,  80, 22, 0.08);  color: var(--green-dark); border-color: var(--green-mid);    }
+.tag-teal     { background: rgba(42, 107,107, 0.08);  color: var(--teal);       border-color: var(--teal-light);   }
+.tag-purpura  { background: var(--purpura-pale);       color: var(--purpura);    border-color: var(--purpura);      }
+.tag-navy     { background: var(--navy-pale);          color: var(--navy);       border-color: var(--navy-mid);     }
+.tag-burgundy { background: var(--burgundy-pale);      color: var(--burgundy);   border-color: var(--burgundy-mid); }
+.tag-gold     { background: rgba(201,168, 76, 0.12);  color: var(--gold-dark);  border-color: var(--gold);         }
 
 /* Buttons */
 .btn {
@@ -659,6 +691,32 @@ code {
   transform: translateY(-2px);
 }
 
+.btn-navy {
+  background: var(--navy);
+  color: #fff;
+  border-color: var(--navy);
+}
+
+.btn-navy:hover {
+  background: var(--navy-mid);
+  border-color: var(--navy-mid);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-burgundy {
+  background: transparent;
+  color: var(--burgundy);
+  border-color: var(--burgundy);
+}
+
+.btn-burgundy:hover {
+  background: var(--burgundy);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
 .btn-ghost {
   background: transparent;
   color: var(--text-secondary);
@@ -697,7 +755,7 @@ code {
    9. ILUMINURA & ORNAMENT ACCENTS
    ============================================================ */
 
-/* Drop cap — add class="drop-cap" to opening <p> on each page */
+/* Drop cap */
 .drop-cap::first-letter {
   font-family: 'IM Fell English', serif;
   font-size: 4.2rem;
@@ -725,7 +783,7 @@ code {
   margin-top: 0.2rem;
 }
 
-/* Fleuron corner mark on cards */
+/* Fleuron corner mark */
 .card-ornament { position: relative; }
 
 .card-ornament::after {
@@ -740,7 +798,7 @@ code {
 
 .card-ornament:hover::after { opacity: 0.7; }
 
-/* Illuminated left border */
+/* Illuminated left border — all five colours */
 .iluminura-border {
   border-left: 4px solid transparent;
   padding-left: 1.2rem;
@@ -753,14 +811,21 @@ code {
   top: 0; left: 0;
   width: 4px;
   height: 100%;
-  background: linear-gradient(to bottom, var(--gold), var(--purpura), var(--teal), var(--gold));
+  background: linear-gradient(
+    to bottom,
+    var(--gold),
+    var(--burgundy),
+    var(--purpura),
+    var(--navy),
+    var(--teal)
+  );
   border-radius: 2px;
 }
 
 /* Manuscript initial block */
 .manuscript-initial {
   display: inline-block;
-  background: var(--purpura);
+  background: var(--navy);
   color: #fff;
   font-family: 'IM Fell English', serif;
   font-size: 2rem;
@@ -770,7 +835,7 @@ code {
   line-height: 2.5rem;
   border-radius: 4px;
   margin-right: 0.6rem;
-  box-shadow: 2px 2px 0 var(--gold-dark);
+  box-shadow: 2px 2px 0 var(--burgundy);
   vertical-align: middle;
 }
 
@@ -779,7 +844,6 @@ code {
    10a. MAIN HALL — index.html
    ============================================================ */
 
-/* Room navigation cards */
 .hall-nav-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
@@ -800,16 +864,21 @@ code {
   display: block;
 }
 
+/* Each room card gets its own signature colour on hover */
 .hall-nav-card::after {
   content: '';
   position: absolute;
   bottom: 0; left: 0; right: 0;
   height: 3px;
-  background: linear-gradient(to right, var(--gold), var(--purpura));
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.3s ease;
 }
+
+.hall-nav-card:nth-child(1)::after { background: var(--green-dark); }
+.hall-nav-card:nth-child(2)::after { background: var(--navy);       }
+.hall-nav-card:nth-child(3)::after { background: var(--burgundy);   }
+.hall-nav-card:nth-child(4)::after { background: var(--purpura);    }
 
 .hall-nav-card:hover {
   box-shadow: var(--shadow-md);
@@ -820,14 +889,15 @@ code {
 
 .hall-nav-card:hover::after { transform: scaleX(1); }
 
-.hall-nav-card .room-icon {
-  font-size: 2rem;
-  margin-bottom: 0.7rem;
-  display: block;
-}
+.hall-nav-card .room-icon   { font-size: 2rem; margin-bottom: 0.7rem; display: block; }
+.hall-nav-card h3           { font-size: 1rem;    margin-bottom: 0.3rem; }
+.hall-nav-card p            { font-size: 0.88rem; color: var(--text-muted); margin: 0; }
 
-.hall-nav-card h3 { font-size: 1rem;   color: var(--green-dark); margin-bottom: 0.3rem; }
-.hall-nav-card p  { font-size: 0.88rem; color: var(--text-muted); margin: 0; }
+/* Override h3 burgundy colour inside nav cards to match room accent */
+.hall-nav-card:nth-child(1) h3 { color: var(--green-dark); }
+.hall-nav-card:nth-child(2) h3 { color: var(--navy);       }
+.hall-nav-card:nth-child(3) h3 { color: var(--burgundy);   }
+.hall-nav-card:nth-child(4) h3 { color: var(--purpura);    }
 
 /* Profile block */
 .profile-block {
@@ -861,7 +931,15 @@ code {
   position: absolute;
   left: 0; top: 0.4rem; bottom: 0;
   width: 2px;
-  background: linear-gradient(to bottom, var(--gold), var(--purpura), var(--teal));
+  background: linear-gradient(
+    to bottom,
+    var(--gold),
+    var(--green-dark),
+    var(--teal),
+    var(--navy),
+    var(--burgundy),
+    var(--purpura)
+  );
   border-radius: 2px;
 }
 
@@ -891,7 +969,7 @@ code {
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--purpura);
+  color: var(--navy);
   margin-bottom: 0.3rem;
 }
 
@@ -960,9 +1038,9 @@ code {
   border-radius: 20px;
 }
 
-.status-active      { background: rgba(45,80,22,0.12);   color: var(--green-dark); border: 1px solid var(--green-mid);     }
-.status-completed   { background: rgba(201,168,76,0.15); color: var(--gold-dark);  border: 1px solid var(--gold);          }
-.status-forthcoming { background: var(--purpura-pale);   color: var(--purpura);    border: 1px solid var(--purpura-light); }
+.status-active      { background: rgba(45, 80, 22, 0.12); color: var(--green-dark); border: 1px solid var(--green-mid);    }
+.status-completed   { background: rgba(201,168, 76, 0.15); color: var(--gold-dark);  border: 1px solid var(--gold);         }
+.status-forthcoming { background: var(--navy-pale);         color: var(--navy);       border: 1px solid var(--navy-mid);    }
 
 
 /* ============================================================
@@ -993,9 +1071,8 @@ code {
   background: transparent;
 }
 
-.filter-tab:hover,
-.filter-tab.active       { background: var(--bg-secondary); color: var(--green-dark); border-color: var(--border-color); }
-.filter-tab.active       { border-color: var(--gold); color: var(--gold-dark); }
+.filter-tab:hover  { background: var(--bg-secondary); color: var(--green-dark);  border-color: var(--border-color); }
+.filter-tab.active { background: var(--bg-secondary); color: var(--gold-dark);   border-color: var(--gold);         }
 
 .portfolio-card {
   background: var(--bg-card);
@@ -1044,7 +1121,7 @@ code {
   align-items: center;
   justify-content: center;
   gap: 0.6rem;
-  background: var(--purpura);
+  background: var(--burgundy);
   color: #fff;
   font-family: 'Nunito', sans-serif;
   font-size: 0.9rem;
@@ -1055,21 +1132,21 @@ code {
   border: none;
   cursor: pointer;
   transition: var(--transition-fast);
-  box-shadow: 0 3px 0 var(--purpura-light), var(--shadow-sm);
+  box-shadow: 0 3px 0 var(--burgundy-mid), var(--shadow-sm);
   animation: waxPulse 3s ease-in-out infinite;
 }
 
 .wax-seal-btn:hover {
-  background: var(--purpura-light);
+  background: var(--burgundy-mid);
   color: #fff;
   transform: translateY(-2px);
-  box-shadow: 0 5px 0 var(--purpura), var(--shadow-md);
+  box-shadow: 0 5px 0 var(--burgundy), var(--shadow-md);
   animation: none;
 }
 
 .wax-seal-btn:active {
   transform: translateY(1px);
-  box-shadow: 0 1px 0 var(--purpura-light);
+  box-shadow: 0 1px 0 var(--burgundy-mid);
 }
 
 .contact-info-list {
@@ -1091,18 +1168,17 @@ code {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: var(--purpura-pale);
+  background: var(--navy-pale);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--purpura);
+  color: var(--navy);
   font-size: 0.95rem;
   flex-shrink: 0;
 }
 
-.contact-form { display: flex; flex-direction: column; gap: 1.1rem; }
-
-.form-group { display: flex; flex-direction: column; gap: 0.35rem; }
+.contact-form  { display: flex; flex-direction: column; gap: 1.1rem; }
+.form-group    { display: flex; flex-direction: column; gap: 0.35rem; }
 
 .form-group label {
   font-family: 'Nunito', sans-serif;
@@ -1130,8 +1206,8 @@ code {
 
 .form-group input:focus,
 .form-group textarea:focus {
-  border-color: var(--purpura);
-  box-shadow: 0 0 0 3px rgba(107, 45, 107, 0.12);
+  border-color: var(--burgundy);
+  box-shadow: 0 0 0 3px rgba(107, 26, 42, 0.12);
 }
 
 .form-group textarea { min-height: 130px; }
@@ -1174,7 +1250,7 @@ footer {
   text-transform: uppercase;
 }
 
-.footer-links a:hover { color: var(--purpura); }
+.footer-links a:hover { color: var(--burgundy); }
 
 .footer-copy {
   font-size: 0.82rem;
@@ -1189,13 +1265,46 @@ footer {
   margin-right: auto;
 }
 
+/* Scroll-to-top */
+#scroll-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--green-dark);
+  color: #fff;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 999;
+  box-shadow: var(--shadow-md);
+}
+
+#scroll-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+#scroll-top:hover {
+  background: var(--teal);
+  box-shadow: var(--shadow-lg);
+}
+
 
 /* ============================================================
    12. ANIMATIONS & TRANSITIONS
    ============================================================ */
 
-/* Scroll reveal
-   JS adds .visible when element enters viewport            */
 .reveal {
   opacity: 0;
   transform: translateY(24px);
@@ -1207,7 +1316,6 @@ footer {
   transform: translateY(0);
 }
 
-/* Staggered children */
 .stagger-children > * {
   opacity: 0;
   transform: translateY(16px);
@@ -1225,7 +1333,6 @@ footer {
   transform: translateY(0);
 }
 
-/* Gold shimmer */
 @keyframes goldShimmer {
   0%, 100% { opacity: 0.55; }
   50%       { opacity: 1.00; }
@@ -1233,13 +1340,11 @@ footer {
 
 .gold-shimmer { animation: goldShimmer 3s ease-in-out infinite; }
 
-/* Wax seal pulse */
 @keyframes waxPulse {
-  0%, 100% { box-shadow: 0 3px 0 var(--purpura-light), var(--shadow-sm); }
-  50%       { box-shadow: 0 3px 0 var(--purpura-light), 0 0 18px rgba(107, 45, 107, 0.28); }
+  0%, 100% { box-shadow: 0 3px 0 var(--burgundy-mid), var(--shadow-sm); }
+  50%       { box-shadow: 0 3px 0 var(--burgundy-mid), 0 0 18px rgba(107, 26, 42, 0.28); }
 }
 
-/* Page fade-in */
 @keyframes pageFadeIn {
   from { opacity: 0; transform: translateY(8px); }
   to   { opacity: 1; transform: translateY(0); }
@@ -1252,15 +1357,11 @@ footer {
    13. RESPONSIVE DESIGN
    ============================================================ */
 
-/* — Tablet: ≤ 900px — */
 @media (max-width: 900px) {
 
   .two-col,
   .two-col-narrow,
-  .contact-wrapper {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
+  .contact-wrapper { grid-template-columns: 1fr; gap: 2rem; }
 
   .navbar-links {
     display: none;
@@ -1295,7 +1396,6 @@ footer {
   .profile-block p { margin: 0 auto; }
 }
 
-/* — Mobile: ≤ 600px — */
 @media (max-width: 600px) {
 
   :root { --section-padding: 2.5rem; }
@@ -1306,16 +1406,15 @@ footer {
   .card-grid-2,
   .hall-nav-grid { grid-template-columns: 1fr; }
 
-  .hero-cta      { flex-direction: column; align-items: center; }
+  .hero-cta     { flex-direction: column; align-items: center; }
 
-  .footer-inner  { flex-direction: column; text-align: center; }
-  .footer-links  { justify-content: center; }
+  .footer-inner { flex-direction: column; text-align: center; }
+  .footer-links { justify-content: center; }
 
-  .network-header          { height: 180px; }
-  .drop-cap::first-letter  { font-size: 3rem; }
+  .network-header         { height: 180px; }
+  .drop-cap::first-letter { font-size: 3rem; }
 }
 
-/* — Print — */
 @media print {
   .navbar,
   .theme-toggle,

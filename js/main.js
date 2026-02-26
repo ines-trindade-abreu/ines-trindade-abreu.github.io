@@ -7,7 +7,7 @@
    3. Hamburger Menu
    4. Active Nav Link
    5. Scroll Reveal (IntersectionObserver)
-   6. Scroll-to-top button
+   6. Scroll-to-top Button
    7. Form Validation (Mail Room)
    8. Init
    ============================================================ */
@@ -19,8 +19,8 @@
 
 const CONFIG = {
   THEME_KEY:        'theme',
-  SCROLL_THRESHOLD: 300,        // px before scroll-to-top appears
-  REVEAL_THRESHOLD: 0.15,       // 15% of element visible before reveal
+  SCROLL_THRESHOLD: 300,
+  REVEAL_THRESHOLD: 0.15,
   REVEAL_ROOT_MARGIN: '0px 0px -60px 0px',
 };
 
@@ -42,7 +42,10 @@ function applyTheme(theme) {
   localStorage.setItem(CONFIG.THEME_KEY, theme);
 
   if (themeToggle) {
-    themeToggle.setAttribute('aria-label', `Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`);
+    themeToggle.setAttribute(
+      'aria-label',
+      `Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`
+    );
     themeToggle.innerHTML = theme === 'dark'
       ? '<i class="fas fa-sun"></i>'
       : '<i class="fas fa-moon"></i>';
@@ -59,7 +62,7 @@ function toggleTheme() {
   applyTheme(current === 'dark' ? 'light' : 'dark');
 }
 
-// Respond to OS-level theme changes (only if user hasn't manually chosen)
+// Respond to OS-level theme changes only if user hasn't manually chosen
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
   if (!localStorage.getItem(CONFIG.THEME_KEY)) {
     applyTheme(e.matches ? 'dark' : 'light');
@@ -76,7 +79,7 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e =
 const navbarToggle = document.querySelector('.navbar-toggle');
 const navbarLinks  = document.querySelector('.navbar-links');
 
-function openMenu()  {
+function openMenu() {
   navbarLinks?.classList.add('open');
   navbarToggle?.classList.add('open');
   navbarToggle?.setAttribute('aria-expanded', 'true');
@@ -92,7 +95,7 @@ function toggleMenu() {
   navbarLinks?.classList.contains('open') ? closeMenu() : openMenu();
 }
 
-// Close when a nav link is clicked (mobile UX)
+// Close when any nav link is clicked (mobile UX)
 navbarLinks?.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', closeMenu);
 });
@@ -116,7 +119,7 @@ document.addEventListener('keydown', e => {
 
 /* ============================================================
    4. ACTIVE NAV LINK
-   Adds .active to whichever nav link matches the current page.
+   Adds .active to whichever link matches the current page.
    ============================================================ */
 
 function setActiveNavLink() {
@@ -133,11 +136,11 @@ function setActiveNavLink() {
    5. SCROLL REVEAL
    Watches .reveal and .stagger-children elements;
    adds .visible when they enter the viewport.
+   Animates once only — observer stops watching after trigger.
    ============================================================ */
 
 function initScrollReveal() {
   const targets = document.querySelectorAll('.reveal, .stagger-children');
-
   if (!targets.length) return;
 
   const observer = new IntersectionObserver(
@@ -145,7 +148,7 @@ function initScrollReveal() {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
-          observer.unobserve(entry.target); // animate once only
+          observer.unobserve(entry.target);
         }
       });
     },
@@ -162,7 +165,7 @@ function initScrollReveal() {
 /* ============================================================
    6. SCROLL-TO-TOP BUTTON
    Appears after scrolling past CONFIG.SCROLL_THRESHOLD px.
-   Requires a <button id="scroll-top"> in your HTML footer area.
+   Requires <button id="scroll-top"> in HTML.
    ============================================================ */
 
 const scrollTopBtn = document.getElementById('scroll-top');
@@ -180,6 +183,12 @@ function scrollToTop() {
 /* ============================================================
    7. FORM VALIDATION — Mail Room
    Lightweight client-side validation for contact.html.
+   Requires:
+     <form id="contact-form">
+       <input id="name">
+       <input id="email">
+       <textarea id="message">
+     </form>
    ============================================================ */
 
 function initContactForm() {
@@ -200,15 +209,17 @@ function initContactForm() {
         .forEach(el => el.style.borderColor = '');
 
     function showError(field, msg) {
-      field.style.borderColor = 'var(--purpura)';
+      field.style.borderColor = 'var(--burgundy)';
+
       const err = document.createElement('span');
-      err.className    = 'field-error';
-      err.textContent  = msg;
+      err.className   = 'field-error';
+      err.textContent = msg;
       err.style.cssText = `
         font-family: 'Nunito', sans-serif;
         font-size: 0.75rem;
-        color: var(--purpura);
+        color: var(--burgundy);
         margin-top: 0.25rem;
+        display: block;
       `;
       field.parentNode.appendChild(err);
       valid = false;
@@ -224,14 +235,14 @@ function initContactForm() {
       showError(message, 'Message must be at least 20 characters.');
 
     if (valid) {
-      // Replace with your preferred form handler (Formspree, Netlify Forms, etc.)
       const btn = form.querySelector('button[type="submit"]');
       if (btn) {
         btn.textContent  = 'Sent ✦';
         btn.disabled     = true;
         btn.style.background = 'var(--green-dark)';
+        btn.style.borderColor = 'var(--green-dark)';
       }
-      // form.submit(); // uncomment when wired to a backend
+      // form.submit(); // uncomment when wired to Formspree / Netlify Forms
     }
   });
 }

@@ -17,32 +17,37 @@
    ============================================================ */
 
 const NETWORK_CONFIG = {
-  NODE_COUNT:     52,
-  LINK_COUNT:     70,
-  GROUP_COUNT:     5,
-  NODE_RADIUS_MIN: 4,
-  NODE_RADIUS_MAX: 9,
-  LINK_DISTANCE:  70,
-  CHARGE_STRENGTH:-90,
-  COLLISION_PAD:  14,
-  ALPHA_DECAY:     0.025,
-  VELOCITY_DECAY:  0.4,
+  NODE_COUNT:      52,
+  LINK_COUNT:      70,
+  GROUP_COUNT:      5,
+  NODE_RADIUS_MIN:  4,
+  NODE_RADIUS_MAX:  9,
+  LINK_DISTANCE:   70,
+  CHARGE_STRENGTH: -90,
+  COLLISION_PAD:   14,
+  ALPHA_DECAY:      0.025,
+  VELOCITY_DECAY:   0.4,
 };
 
-/* Palette — matches CSS variables for light AND dark mode.
-   These are read at runtime so toggling data-theme is enough. */
+
+/* ============================================================
+   PALETTE
+   Reads CSS variables at runtime so dark/light mode toggle
+   updates colours without reinitialising the simulation.
+   ============================================================ */
+
 function getPalette() {
   const style = getComputedStyle(document.documentElement);
   return {
     nodeColors: [
       style.getPropertyValue('--green-dark').trim()  || '#2D5016',
+      style.getPropertyValue('--navy').trim()        || '#1B2A4A',
+      style.getPropertyValue('--burgundy').trim()    || '#6B1A2A',
       style.getPropertyValue('--purpura').trim()     || '#6B2D6B',
       style.getPropertyValue('--teal').trim()        || '#2A6B6B',
-      style.getPropertyValue('--gold').trim()        || '#C9A84C',
-      style.getPropertyValue('--green-mid').trim()   || '#3E7B27',
     ],
-    linkColor:   style.getPropertyValue('--border-color').trim() || '#C4B49A',
-    nodeStroke:  style.getPropertyValue('--bg-card').trim()      || '#FAF7F2',
+    linkColor:  style.getPropertyValue('--border-color').trim() || '#C4B49A',
+    nodeStroke: style.getPropertyValue('--bg-card').trim()      || '#FAF7F2',
   };
 }
 
@@ -70,9 +75,9 @@ function buildGraph() {
   const links   = [];
 
   while (links.length < NETWORK_CONFIG.LINK_COUNT) {
-    const s = Math.floor(Math.random() * NETWORK_CONFIG.NODE_COUNT);
-    const t = Math.floor(Math.random() * NETWORK_CONFIG.NODE_COUNT);
-    const key = `${Math.min(s,t)}-${Math.max(s,t)}`;
+    const s   = Math.floor(Math.random() * NETWORK_CONFIG.NODE_COUNT);
+    const t   = Math.floor(Math.random() * NETWORK_CONFIG.NODE_COUNT);
+    const key = `${Math.min(s, t)}-${Math.max(s, t)}`;
     if (s !== t && !linkSet.has(key)) {
       linkSet.add(key);
       links.push({ source: s, target: t });
@@ -179,9 +184,8 @@ function initNetworkHeader(containerId) {
         .attr('stroke-width', 1.5);
     });
 
-  /* Tick */
+  /* Tick — clamp nodes inside canvas bounds */
   simulation.on('tick', () => {
-    // Clamp nodes inside canvas
     nodes.forEach(d => {
       d.x = Math.max(d.r, Math.min(W - d.r, d.x));
       d.y = Math.max(d.r, Math.min(H - d.r, d.y));
@@ -199,16 +203,22 @@ function initNetworkHeader(containerId) {
   });
 
   /* Re-read palette when theme toggle fires,
-     so colors update without a page reload.   */
+     so colours update without a page reload.  */
   const themeObserver = new MutationObserver(() => {
     const p = getPalette();
     link.attr('stroke', p.linkColor);
-    node.attr('stroke', p.nodeStroke);
-    // Node fills update via colorScale which re-reads CSS vars
+    node
+      .attr('stroke', p.nodeStroke)
+      .attr('fill',   d => {
+        const updatedScale = d3.scaleOrdinal()
+          .domain(d3.range(NETWORK_CONFIG.GROUP_COUNT))
+          .range(p.nodeColors);
+        return updatedScale(d.group);
+      });
   });
 
   themeObserver.observe(document.documentElement, {
-    attributes: true,
+    attributes:      true,
     attributeFilter: ['data-theme'],
   });
 
