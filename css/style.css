@@ -475,7 +475,7 @@ code {
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
-  background-attachment: fixed; /* parallax feel — remove if too heavy on mobile */
+  background-attachment: fixed;
 }
 
 /* Parchment wash overlay — keeps text legible, tints to theme */
@@ -493,7 +493,7 @@ code {
   z-index: 0;
 }
 
-/* Dark mode overlay — deeper tint so text still reads */
+/* Dark mode overlay */
 [data-theme="dark"] .hero-index::before {
   background:
     linear-gradient(
@@ -527,6 +527,51 @@ code {
   gap: 1rem;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+/* Hero image attribution — vertical text, lower left */
+.hero-attribution {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.2rem;
+  z-index: 2;
+
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  opacity: 0.75;
+  transition: opacity 0.2s ease;
+  max-width: none;
+  margin: 0;
+}
+
+.hero-attribution:hover { opacity: 1; }
+
+/* Institution link — teal */
+.attr-institution {
+  color: var(--teal);
+  text-decoration: none;
+}
+
+.attr-institution:hover {
+  color: var(--teal-light);
+  text-decoration: underline;
+}
+
+/* Manuscript link — gold */
+.attr-source {
+  color: var(--gold-dark);
+  text-decoration: none;
+}
+
+.attr-source:hover {
+  color: var(--gold);
+  text-decoration: underline;
 }
 
 
