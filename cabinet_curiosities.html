@@ -1,60 +1,469 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inês da Trindade Abreu</title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
-    <link rel="stylesheet" href="css/css.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cabinet of Curiosities — Research and scientific interests of Inês da Trindade Abreu, graduate researcher in nuclear physics and history of science.">
+  <title>Cabinet of Curiosities — Inês da Trindade Abreu</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="bg-orion">
+<body>
 
-    <!-- Navigation -->
-    <div class="nav">
-        <ul>
-            <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-            <li><a href="about.html"><i class="fas fa-user"></i> About Me</a></li>
-            <li><a href="research.html"><i class="fas fa-atom"></i> Research & Interests</a></li>
-            <li><a href="portfolio.html"><i class="fas fa-folder-open"></i> Portfolio</a></li>
-            <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
-        </ul>
+  <!-- ============================================================
+       NAVIGATION
+       ============================================================ -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <a href="main_hall.html" class="navbar-logo" aria-label="Return to Main Hall">
+      Inês da Trindade Abreu <span>✦</span>
+    </a>
+    <ul class="navbar-links" id="navbar-links">
+      <li><a href="common_room.html">Common Room</a></li>
+      <li><a href="cabinet_curiosities.html" class="active">Cabinet of Curiosities</a></li>
+      <li><a href="bibliotheca.html">Bibliotheca</a></li>
+      <li><a href="scriptorium.html">Scriptorium</a></li>
+      <li><a href="mail_room.html">Mail Room</a></li>
+    </ul>
+    <div class="navbar-controls">
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+        <i class="fas fa-moon"></i>
+      </button>
+      <button class="navbar-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navbar-links">
+        <span></span><span></span><span></span>
+      </button>
     </div>
+  </nav>
 
-<!-- Main Container -->
-    <div class="container">
-        <!-- Hero Section -->
-        <div class="hero">
-            <h1>Research and Scientific Interests</h1>
-            <p class="tagline">From nuclei to nebulae: discovering the universe at every scale</p>
+
+  <!-- ============================================================
+       MAIN CONTENT
+       ============================================================ -->
+  <main class="page-content">
+
+
+    <!-- ── NETWORK HERO ─────────────────────────────────────── -->
+    <section class="network-hero" id="network-hero" aria-labelledby="research-heading">
+      <canvas id="network-canvas"></canvas>
+      <div class="network-hero-content">
+        <div class="ornament-divider gold-shimmer" aria-hidden="true">
+          <span class="star-sm">✦</span><span class="star-lg">✦</span><span class="star-sm">✦</span>
+        </div>
+        <span class="section-label">Cabinet of Curiosities</span>
+        <h1 id="research-heading">Research</h1>
+        <p class="subtitle">Nuclear physics, network science, and the long history of ideas.</p>
+        <div class="ornament-divider" aria-hidden="true" style="margin-top: 1.5rem;">
+          <span class="star-sm">✦</span><span class="star-lg">✦</span><span class="star-sm">✦</span>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ── RESEARCH OVERVIEW ────────────────────────────────── -->
+    <section class="section" aria-labelledby="overview-heading">
+      <div class="container">
+
+        <span class="section-label">The Collection</span>
+        <h2 class="section-title" id="overview-heading">
+          What Lives Here
+          <span class="star-cluster" aria-hidden="true">
+            <span class="star-sm"></span><span class="star-lg"></span><span class="star-sm"></span>
+          </span>
+        </h2>
+
+        <div class="two-col-narrow">
+
+          <div class="reveal">
+            <p class="drop-cap">
+              This cabinet holds the curious, the unfinished, and the deeply interesting. My research
+              sits at the boundary between the exact sciences and the humanities — between the nucleus
+              of an atom and the network of people who first named it, measured it, and argued over
+              what it meant.
+            </p>
+            <p>
+              At Técnico Lisboa I have built a foundation in nuclear and radiation physics, with a
+              particular interest in their applications to health and environmental sciences. In
+              parallel, I have found myself increasingly drawn to the history and sociology of
+              science: how knowledge is produced, who gets credit, and how ideas travel through
+              communities of scholars across time.
+            </p>
+            <p>
+              My MSc thesis brings these two worlds together, applying network analysis to the
+              early radioactivity community — a moment in history when the discipline was being
+              invented, the rules were still being written, and some of the most important
+              contributors were women navigating a deeply unequal field.
+            </p>
+          </div>
+
+          <div class="reveal" style="display: flex; flex-direction: column; gap: 0.9rem;">
+
+            <div class="card" style="border-left: 4px solid var(--green-dark);">
+              <div class="card-icon" style="background: var(--bg-secondary); color: var(--green-dark); border: 1px solid var(--green-mid);">
+                <i class="fas fa-atom"></i>
+              </div>
+              <h3 style="color: var(--green-dark);">Nuclear &amp; Radiation Physics</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary);">Radioactive decay, radiation detection, XRF analysis, dosimetry, and applications to health and environmental sciences.</p>
+              <div class="skills-list" style="margin-top: 0.6rem;">
+                <span class="tag tag-green">Radiation Detection</span>
+                <span class="tag tag-green">XRF</span>
+                <span class="tag tag-green">Dosimetry</span>
+                <span class="tag tag-green">Nuclear Reactions</span>
+              </div>
+            </div>
+
+            <div class="card" style="border-left: 4px solid var(--purpura);">
+              <div class="card-icon" style="background: var(--purpura-pale); color: var(--purpura);">
+                <i class="fas fa-project-diagram"></i>
+              </div>
+              <h3 style="color: var(--purpura);">Network Science</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary);">Temporal citation networks, community detection, knowledge diffusion models, and bibliometric analysis applied to scholarly communities.</p>
+              <div class="skills-list" style="margin-top: 0.6rem;">
+                <span class="tag tag-purpura">Citation Networks</span>
+                <span class="tag tag-purpura">Community Detection</span>
+                <span class="tag tag-purpura">Bibliometrics</span>
+              </div>
+            </div>
+
+            <div class="card" style="border-left: 4px solid var(--teal);">
+              <div class="card-icon" style="background: rgba(42,107,107,0.10); color: var(--teal);">
+                <i class="fas fa-scroll"></i>
+              </div>
+              <h3 style="color: var(--teal);">History of Science</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary);">Knowledge production and dissemination, the early radioactivity community, women in science, and the sociology of scientific fields.</p>
+              <div class="skills-list" style="margin-top: 0.6rem;">
+                <span class="tag tag-teal">Radioactivity</span>
+                <span class="tag tag-teal">Women in Science</span>
+                <span class="tag tag-teal">1898–1938</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ── MSC THESIS ────────────────────────────────────────── -->
+    <section class="section section-alt" aria-labelledby="thesis-heading">
+      <div class="container">
+
+        <span class="section-label">Current Work</span>
+        <h2 class="section-title" id="thesis-heading">MSc Thesis</h2>
+
+        <div class="card reveal" style="max-width: 860px; margin: 0 auto;">
+          <div style="display: flex; align-items: flex-start; gap: 1.2rem; flex-wrap: wrap; margin-bottom: 1.4rem;">
+            <div class="card-icon" style="background: var(--purpura-pale); color: var(--purpura); flex-shrink: 0;">
+              <i class="fas fa-network-wired"></i>
+            </div>
+            <div style="flex: 1; min-width: 200px;">
+              <div class="research-meta">
+                <span class="research-status status-active">Active</span>
+                <span class="tag tag-purpura">Network Science</span>
+                <span class="tag tag-teal">History of Science</span>
+                <span class="tag tag-green">Nuclear Physics</span>
+              </div>
+              <h3 style="margin-top: 0.6rem; font-size: 1.15rem; color: var(--purpura); line-height: 1.4;">
+                "At the Origin Node: A Temporal Network Analysis of Knowledge Diffusion
+                in the Radioactivity Community, 1898–1938"
+              </h3>
+              <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 0.3rem; font-family: var(--font-ui);">
+                MSc in Engineering Physics · Instituto Superior Técnico, Universidade de Lisboa · Pending approval
+              </p>
+            </div>
+          </div>
+
+          <div class="iluminura-border" style="padding: 1rem 1.2rem; margin-bottom: 1.4rem;">
+            <p style="margin: 0; font-style: italic; color: var(--text-secondary); font-size: 0.95rem;">
+              How does scientific knowledge spread through a community of scholars? Who were the
+              gatekeepers, the bridges, the early adopters — and what role did gender play in
+              shaping who was cited, who was read, and who was forgotten?
+            </p>
+          </div>
+
+          <p>
+            This thesis constructs and analyses a <strong>temporal citation network</strong> of
+            the early radioactivity community between 1898 and 1938 — from Becquerel's discovery
+            through to the onset of nuclear fission. Using tools from network science
+            (centrality measures, community detection, temporal analysis), the work traces how
+            knowledge about radioactivity diffused through an international scholarly network,
+            with particular attention to the structural position and influence of
+            <strong>Marie Curie</strong> and other women researchers in a field that was simultaneously
+            being defined and gatekept.
+          </p>
+          <p>
+            The project draws on digitised historical literature, bibliometric databases, and
+            computational methods in Python, and is situated at the intersection of physics,
+            history, and the sociology of science.
+          </p>
+
+          <div style="margin-top: 1.2rem; display: flex; gap: 0.8rem; flex-wrap: wrap;">
+            <a href="bibliotheca.html" class="btn btn-outline" style="font-size: 0.85rem;">
+              <i class="fas fa-book-open"></i>&nbsp; See in Bibliotheca
+            </a>
+            <a href="mail_room.html" class="btn btn-ghost" style="font-size: 0.85rem;">
+              <i class="fas fa-envelope"></i>&nbsp; Enquire
+            </a>
+          </div>
         </div>
 
-        <!-- About Content -->
-        <div class="content-section">
-            <h2>Recent and ongoing projects</h2>
-            <p>I have recently completed the Integrated Project for my MS, titled "Quantitative and Qualitative Elemental Analysis via X-Ray Fluorescence for Materials' Characterization". I am now looking for a topic for my MS Dissertation, ideally in Stellar Nucleosynthesis</p>
-        </div>
+      </div>
+    </section>
 
-        <div class="content-section">
-            <h2>Past projects</h2>
-            <p>For my Bachelor's Integrated Project, I developed a program in C to model the diffusion and clearance of hydrogen peroxide in brain cells. This foundational work was subsequently advanced by another student and is currently being prepared for publication.</p>
-        </div>
 
-        <div class="content-section">
-            <h2>Other academic pursuits</h2>
-            <p>I have participated in many workshops and mini-courses in an attempt to broaden my horizons and finetune my research interests. For a comprehensive list, please consult my LinkedIn profile <a href="https://www.linkedin.com/in/inestrindadeabreu/details/experience/" target="_blank" rel="noopener noreferrer">here</a>.</p>
-            <p>Comprehensive list coming soon to the website.</p>
+    <!-- ── OTHER RESEARCH INTERESTS ──────────────────────────── -->
+    <section class="section" aria-labelledby="interests-heading">
+      <div class="container">
+
+        <span class="section-label">Also in the Cabinet</span>
+        <h2 class="section-title" id="interests-heading">Other Research Interests</h2>
+
+        <div class="card-grid stagger-children">
+
+          <article class="card card-ornament reveal">
+            <div class="card-icon" style="background: var(--navy-pale); color: var(--navy);">
+              <i class="fas fa-atom"></i>
+            </div>
+            <div class="research-meta">
+              <span class="research-status status-active">Active</span>
+              <span class="tag tag-navy">Nuclear History</span>
+            </div>
+            <h3>The Manhattan Project</h3>
+            <p>
+              An ongoing series of articles exploring the scientific, social, and political
+              dimensions of the Manhattan Project — the wartime programme that produced the first
+              atomic weapons and irrevocably shaped the twentieth century. Published in the
+              <em>Nuclear Vision Portugal</em> newsletter.
+            </p>
+            <div style="margin-top: 1rem;">
+              <a href="bibliotheca.html" class="btn btn-ghost" style="font-size: 0.82rem; padding: 0.4rem 0.9rem;">
+                Read in Bibliotheca <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </article>
+
+          <article class="card card-ornament reveal">
+            <div class="card-icon" style="background: var(--burgundy-pale); color: var(--burgundy);">
+              <i class="fas fa-vial"></i>
+            </div>
+            <div class="research-meta">
+              <span class="research-status status-completed">Completed</span>
+              <span class="tag tag-burgundy">Nuclear Physics</span>
+              <span class="tag tag-burgundy">History</span>
+            </div>
+            <h3>History of Uranium</h3>
+            <p>
+              A two-part article series tracing uranium from its discovery by Martin Klaproth in
+              1789 through to its pivotal role in nuclear energy and weapons. Explores the
+              intersection of chemistry, physics, and politics across two centuries.
+            </p>
+            <div style="margin-top: 1rem;">
+              <a href="bibliotheca.html" class="btn btn-ghost" style="font-size: 0.82rem; padding: 0.4rem 0.9rem;">
+                Read in Bibliotheca <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </article>
+
+          <article class="card card-ornament reveal">
+            <div class="card-icon" style="background: rgba(107,45,107,0.10); color: var(--purpura);">
+              <i class="fas fa-venus"></i>
+            </div>
+            <div class="research-meta">
+              <span class="research-status status-active">Active</span>
+              <span class="tag tag-purpura">Women in Science</span>
+              <span class="tag tag-teal">History</span>
+            </div>
+            <h3>Women in the Radioactivity Community</h3>
+            <p>
+              A sustained interest in the women who contributed to the early radioactivity
+              community — their scientific roles, their institutional positions, their erasure,
+              and their partial recovery in the historical record. Underpins much of the
+              MSc thesis work.
+            </p>
+          </article>
+
+          <article class="card card-ornament reveal">
+            <div class="card-icon" style="background: var(--bg-secondary); color: var(--green-dark); border: 1px solid var(--green-mid);">
+              <i class="fas fa-heartbeat"></i>
+            </div>
+            <div class="research-meta">
+              <span class="research-status status-forthcoming">Interest</span>
+              <span class="tag tag-green">Radiation Physics</span>
+              <span class="tag tag-green">Health Sciences</span>
+            </div>
+            <h3>Radiation &amp; Health Applications</h3>
+            <p>
+              Radiation physics applied to medicine and environmental health: dosimetry,
+              radiation protection, radiological imaging, and the use of X-ray fluorescence
+              in biological and materials analysis. A focus area of the BSc curriculum at Técnico.
+            </p>
+          </article>
+
+          <article class="card card-ornament reveal">
+            <div class="card-icon" style="background: rgba(201,168,76,0.12); color: var(--gold-dark);">
+              <i class="fas fa-compass"></i>
+            </div>
+            <div class="research-meta">
+              <span class="research-status status-forthcoming">Self-directed</span>
+              <span class="tag tag-gold">Autodidact</span>
+            </div>
+            <h3>The Wider Cabinet</h3>
+            <p>
+              Self-directed explorations beyond the formal curriculum: medieval studies,
+              history of medicine, epigenetics, alchemy and proto-chemistry, and the
+              long, tangled history of how humans have tried to understand the natural world.
+              The kind of reading that does not always end up in a CV.
+            </p>
+          </article>
+
+          <article class="card card-ornament reveal">
+            <div class="card-icon" style="background: rgba(27,42,74,0.10); color: var(--navy);">
+              <i class="fas fa-star"></i>
+            </div>
+            <div class="research-meta">
+              <span class="research-status status-forthcoming">Background</span>
+              <span class="tag tag-navy">Astrophysics</span>
+            </div>
+            <h3>Astrophysics — The Origin</h3>
+            <p>
+              The discipline that started everything. Astrophysics was the first love — the reason
+              for pursuing STEM, for applying to Hofstra, for not taking the easier road. Though my
+              research has since moved to other domains, the questions it raised about scale, origin,
+              and wonder have never really left.
+            </p>
+          </article>
+
         </div>
+      </div>
+    </section>
+
+
+    <!-- ── METHODS & TOOLS ───────────────────────────────────── -->
+    <section class="section section-alt" aria-labelledby="methods-heading">
+      <div class="container">
+
+        <span class="section-label">How the Work Gets Done</span>
+        <h2 class="section-title" id="methods-heading">Methods &amp; Tools</h2>
+
+        <div class="card-grid-2 stagger-children">
+
+          <div class="card reveal">
+            <div class="card-icon" style="background: var(--navy-pale); color: var(--navy);">
+              <i class="fas fa-code"></i>
+            </div>
+            <h3 style="color: var(--navy);">Computational</h3>
+            <div class="skills-list">
+              <span class="tag tag-navy">Python</span>
+              <span class="tag tag-navy">NetworkX</span>
+              <span class="tag tag-navy">Pandas</span>
+              <span class="tag tag-navy">Matplotlib</span>
+              <span class="tag tag-navy">LaTeX</span>
+              <span class="tag tag-navy">ROOT (CERN)</span>
+            </div>
+          </div>
+
+          <div class="card reveal">
+            <div class="card-icon" style="background: var(--bg-secondary); color: var(--green-dark); border: 1px solid var(--green-mid);">
+              <i class="fas fa-flask"></i>
+            </div>
+            <h3 style="color: var(--green-dark);">Laboratory</h3>
+            <div class="skills-list">
+              <span class="tag tag-green">Radiation Detection</span>
+              <span class="tag tag-green">XRF Analysis</span>
+              <span class="tag tag-green">PyMca</span>
+              <span class="tag tag-green">LTSpice</span>
+              <span class="tag tag-green">Dosimetry</span>
+            </div>
+          </div>
+
+          <div class="card reveal">
+            <div class="card-icon" style="background: var(--purpura-pale); color: var(--purpura);">
+              <i class="fas fa-search"></i>
+            </div>
+            <h3 style="color: var(--purpura);">Research Methods</h3>
+            <div class="skills-list">
+              <span class="tag tag-purpura">Bibliometric Analysis</span>
+              <span class="tag tag-purpura">Temporal Networks</span>
+              <span class="tag tag-purpura">Citation Analysis</span>
+              <span class="tag tag-purpura">Archival Research</span>
+              <span class="tag tag-purpura">Academic Writing</span>
+            </div>
+          </div>
+
+          <div class="card reveal">
+            <div class="card-icon" style="background: rgba(42,107,107,0.10); color: var(--teal);">
+              <i class="fas fa-database"></i>
+            </div>
+            <h3 style="color: var(--teal);">Data Sources</h3>
+            <div class="skills-list">
+              <span class="tag tag-teal">Web of Science</span>
+              <span class="tag tag-teal">Scopus</span>
+              <span class="tag tag-teal">JSTOR</span>
+              <span class="tag tag-teal">BHL</span>
+              <span class="tag tag-teal">Gallica (BnF)</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ── CLOSING QUOTE ────────────────────────────────────── -->
+    <section class="section">
+      <div class="container" style="max-width: 700px;">
+        <blockquote class="iluminura-border reveal">
+          "Nothing in life is to be feared, it is only to be understood. Now is the time
+          to understand more, so that we may fear less."
+          <br><br>
+          <strong>— Marie Curie</strong>
+        </blockquote>
+      </div>
+    </section>
+
+
+  </main>
+
+
+  <!-- ============================================================
+       SCROLL-TO-TOP
+       ============================================================ -->
+  <button id="scroll-top" aria-label="Scroll to top" title="Back to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-logo">Inês da Trindade Abreu <span style="color: var(--gold);">✦</span></span>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="common_room.html">Common Room</a>
+        <a href="cabinet_curiosities.html">Cabinet of Curiosities</a>
+        <a href="bibliotheca.html">Bibliotheca</a>
+        <a href="scriptorium.html">Scriptorium</a>
+        <a href="mail_room.html">Mail Room</a>
+      </nav>
     </div>
+    <p class="footer-copy">
+      © <span id="footer-year"></span> Inês da Trindade Abreu · Fueled by curiosity and caffeine.
+    </p>
+  </footer>
 
-<!-- Image Credit -->
-    <div class="image-credit">
-        © <a href="https://esahubble.org/images/heic0601a/" target="_blank">NASA, ESA, M. Robberto (Space Telescope Science Institute/ESA) <br> and the Hubble Space Telescope Orion Treasury Project Team.</a>
-    </div>
+
+  <!-- ============================================================
+       SCRIPTS
+       ============================================================ -->
+  <script src="js/network-header.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script>
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+  </script>
+
 </body>
-</html> 
-
-
-
-
+</html>
