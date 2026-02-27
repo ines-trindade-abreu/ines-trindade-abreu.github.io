@@ -92,54 +92,55 @@
 
 /* — Dark Mode — */
 [data-theme="dark"] {
-  --bg-primary:   #1A1610;
-  --bg-secondary: #221E14;
-  --bg-card:      #2A2418;
-  --bg-overlay:   rgba(26, 22, 16, 0.92);
+  --bg-primary:   #1E1C18;
+  --bg-secondary: #252318;
+  --bg-card:      #2C291E;
+  --bg-overlay:   rgba(30, 28, 24, 0.92);
 
-  /* 1. Botanical green — muted, not neon */
-  --green-dark:  #4A7A28;
-  --green-mid:   #5A9030;
+  /* 1. Botanical green — desaturated, warm */
+  --green-dark:  #5C7A3A;
+  --green-mid:   #6A8C44;
 
-  /* 2. Teal */
-  --teal:        #3A9B9B;
-  --teal-light:  #55BBBB;
+  /* 2. Teal — muted, not aqua */
+  --teal:        #3D7A7A;
+  --teal-light:  #4E9090;
 
-  /* 3. Purpura */
-  --purpura:       #9B4D9B;
-  --purpura-light: #C070C0;
-  --purpura-pale:  #2A1A2A;
+  /* 3. Purpura — dusty, not vivid */
+  --purpura:       #7A4A7A;
+  --purpura-light: #9A6A9A;
+  --purpura-pale:  #221820;
 
-  /* 4. Navy — lightened for dark bg legibility */
-  --navy:        #4A6FA5;
-  --navy-mid:    #5A85BF;
-  --navy-light:  #7AA0D0;
-  --navy-pale:   #151E2E;
+  /* 4. Navy — slate, not electric */
+  --navy:        #4A6080;
+  --navy-mid:    #5A7090;
+  --navy-light:  #6A85A8;
+  --navy-pale:   #171C26;
 
-  /* 5. Burgundy — lightened for dark bg legibility */
-  --burgundy:      #B03050;
-  --burgundy-mid:  #CC4A65;
-  --burgundy-pale: #2A1218;
+  /* 5. Burgundy — dark rose, not fire */
+  --burgundy:      #8A3045;
+  --burgundy-mid:  #A03A55;
+  --burgundy-pale: #221218;
 
-  /* Gold */
-  --gold:      #D4B060;
-  --gold-dark: #B08830;
+  /* Gold — warm amber, not bright yellow */
+  --gold:      #B8943A;
+  --gold-dark: #9A7820;
 
-  /* Text */
-  --text-primary:   #F0EAD6;
-  --text-secondary: #C8B99A;
-  --text-muted:     #8A7E6A;
-  --text-inverse:   #1A1610;
+  /* Text — warm off-white, not stark white */
+  --text-primary:   #E8E0CC;
+  --text-secondary: #B8A888;
+  --text-muted:     #7A6E5A;
+  --text-inverse:   #1E1C18;
 
-  /* Borders */
-  --border-color: #4A3E2A;
-  --border-light: #3A3020;
+  /* Borders — subtle, not glowing */
+  --border-color: #3A3228;
+  --border-light: #302C22;
 
   /* Shadows */
-  --shadow-sm: 0 2px 8px  rgba(0, 0, 0, 0.30);
-  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.40);
-  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.50);
+  --shadow-sm: 0 2px 8px  rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.55);
 }
+
 
 
 /* ============================================================
@@ -996,6 +997,106 @@ code {
   box-shadow: 0 0 0 6px var(--bg-secondary), var(--shadow-md);
   flex-shrink: 0;
 }
+
+/* Image-backed room nav cards */
+.hall-nav-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--card-radius);
+  padding: 0;
+  text-align: center;
+  transition: var(--transition-normal);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  display: block;
+  min-height: 180px;
+}
+
+.hall-nav-card-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform 0.4s ease;
+  z-index: 0;
+}
+
+.hall-nav-card:hover .hall-nav-card-bg {
+  transform: scale(1.05);
+}
+
+.hall-nav-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(245, 240, 232, 0.72) 0%,
+    rgba(245, 240, 232, 0.88) 100%
+  );
+  z-index: 1;
+  transition: background 0.3s ease;
+}
+
+[data-theme="dark"] .hall-nav-card-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(30, 28, 24, 0.72) 0%,
+    rgba(30, 28, 24, 0.88) 100%
+  );
+}
+
+.hall-nav-card:hover .hall-nav-card-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(245, 240, 232, 0.60) 0%,
+    rgba(245, 240, 232, 0.78) 100%
+  );
+}
+
+[data-theme="dark"] .hall-nav-card:hover .hall-nav-card-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(30, 28, 24, 0.60) 0%,
+    rgba(30, 28, 24, 0.78) 100%
+  );
+}
+
+.hall-nav-card-content {
+  position: relative;
+  z-index: 2;
+  padding: 1.5rem 1.2rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Card attribution — vertical, lower left */
+.card-attribution {
+  position: absolute;
+  bottom: 0.8rem;
+  left: 0.6rem;
+  z-index: 3;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.58rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  opacity: 0.65;
+  transition: opacity 0.2s ease;
+  text-decoration: none;
+}
+
+.card-attribution:hover {
+  opacity: 1;
+  color: var(--teal);
+}
+
 
 
 /* ============================================================
