@@ -875,6 +875,17 @@ code {
   transform: translateY(-2px);
 }
 
+[data-theme="dark"] .btn-outline {
+  color: var(--purpura-light);
+  border-color: var(--purpura-light);
+  background: rgba(122, 74, 122, 0.20);
+}
+
+[data-theme="dark"] .btn-outline:hover {
+  background: var(--purpura);
+  color: #fff;
+}
+
 .btn-navy {
   background: var(--navy);
   color: #fff;
