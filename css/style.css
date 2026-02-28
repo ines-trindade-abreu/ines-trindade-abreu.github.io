@@ -279,7 +279,7 @@ blockquote {
   border-radius: 0 var(--card-radius) var(--card-radius) 0;
   font-style: italic;
   color: var(--text-secondary);
-  font-size: 1.25rem;
+  font-size: 1.15rem;
 }
 
 code {
@@ -1031,7 +1031,7 @@ code {
 }
 
 /* ============================================================
-   10a. MAIN HALL — index.html
+   10a. MAIN HALL — main_hall.html
    ============================================================ */
 
 .hall-nav-grid {
@@ -1208,7 +1208,7 @@ code {
 
 
 /* ============================================================
-   10b. COMMON ROOM — about.html
+   10b. COMMON ROOM — common_room.html
    ============================================================ */
 
 .timeline {
@@ -1293,7 +1293,7 @@ code {
 
 
 /* ============================================================
-   10c. CABINET OF CURIOSITIES — research.html
+   10c. CABINET OF CURIOSITIES — cabinet_curiosities.html
    ============================================================ */
 
 .research-item {
@@ -1334,7 +1334,7 @@ code {
 
 
 /* ============================================================
-   10d. LIBRARY — portfolio.html
+   10d. LIBRARY — bibliotheca.html
    ============================================================ */
 
 .filter-tabs {
@@ -1396,7 +1396,7 @@ code {
 
 
 /* ============================================================
-   10e. MAIL ROOM — contact.html
+   10e. MAIL ROOM — mail_room.html
    ============================================================ */
 
 .contact-wrapper {
@@ -1543,7 +1543,7 @@ footer {
 .footer-links a:hover { color: var(--burgundy); }
 
 .footer-copy {
-  font-size: 0.9rem;
+  font-size: 1.0rem;
   color: var(--text-muted);
   font-style: italic;
   text-align: center;
