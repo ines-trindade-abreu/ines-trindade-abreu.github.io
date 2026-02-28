@@ -1,0 +1,40 @@
+# Simple, fast workflow for your static HTML/CSS/JS site
+name: Deploy static site to Pages
+
+on:
+  push:
+    branches: ["main"]  # Triggers on pushes to main
+  workflow_dispatch:   # Allows manual runs from Actions tab
+
+# Permissions for Pages deployment
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Ensure only one deploy job runs at a time
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload entire site as artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'  # Deploys everything in root (your HTML, CSS, JS, images)
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
