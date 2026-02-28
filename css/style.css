@@ -1047,7 +1047,7 @@ code {
 
 .hall-nav-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  grid-template-columns: repeat(5, 1fr);
   gap: 1.2rem;
   margin-top: 2.5rem;
 }
@@ -1099,6 +1099,8 @@ code {
 .hall-nav-card:nth-child(2) h3 { color: var(--navy);       }
 .hall-nav-card:nth-child(3) h3 { color: var(--burgundy);   }
 .hall-nav-card:nth-child(4) h3 { color: var(--purpura);    }
+.hall-nav-card:nth-child(5)::after { background: var(--teal); }
+.hall-nav-card:nth-child(5) h3     { color: var(--teal);      }
 
 /* Profile block */
 .profile-block {
@@ -1661,6 +1663,13 @@ footer {
 /* ============================================================
    13. RESPONSIVE DESIGN
    ============================================================ */
+
+@media (max-width: 1000px) {
+  .hall-nav-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}   
+
 
 @media (max-width: 900px) {
 
