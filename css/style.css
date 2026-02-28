@@ -524,6 +524,50 @@ code {
   margin: 0 auto 2rem;
 }
 
+/* Common Room hero — image-backed, 66vh */
+.common-room-hero {
+  min-height: 66vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: clamp(2rem, 6vw, 5rem) clamp(1rem, 4vw, 3rem);
+  position: relative;
+  overflow: hidden;
+
+  background-image: url('../images/room-about.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.common-room-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(245, 240, 232, 0.82) 0%,
+    rgba(245, 240, 232, 0.70) 50%,
+    rgba(245, 240, 232, 0.88) 100%
+  );
+  z-index: 0;
+}
+
+[data-theme="dark"] .common-room-hero::before {
+  background: linear-gradient(
+    to bottom,
+    rgba(26, 22, 16, 0.82) 0%,
+    rgba(26, 22, 16, 0.70) 50%,
+    rgba(26, 22, 16, 0.88) 100%
+  );
+}
+
+.common-room-hero > * { position: relative; z-index: 1; }
+
+
 .hero-cta {
   display: inline-flex;
   gap: 1rem;
