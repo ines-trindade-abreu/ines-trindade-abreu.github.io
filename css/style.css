@@ -279,6 +279,7 @@ blockquote {
   border-radius: 0 var(--card-radius) var(--card-radius) 0;
   font-style: italic;
   color: var(--text-secondary);
+  font-size: 1.25rem;
 }
 
 code {
@@ -1542,7 +1543,7 @@ footer {
 .footer-links a:hover { color: var(--burgundy); }
 
 .footer-copy {
-  font-size: 0.82rem;
+  font-size: 0.9rem;
   color: var(--text-muted);
   font-style: italic;
   text-align: center;
