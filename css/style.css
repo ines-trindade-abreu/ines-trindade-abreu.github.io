@@ -485,25 +485,23 @@ code {
   content: '';
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(245, 240, 232, 0.82) 0%,
-      rgba(245, 240, 232, 0.70) 50%,
-      rgba(245, 240, 232, 0.88) 100%
-    );
+  background: linear-gradient(
+  to bottom,
+  rgba(245, 240, 232, 0.92) 0%,
+  rgba(245, 240, 232, 0.82) 50%,
+  rgba(245, 240, 232, 0.94) 100%
+);
   z-index: 0;
 }
 
 /* Dark mode overlay */
 [data-theme="dark"] .hero-index::before {
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(26, 22, 16, 0.82) 0%,
-      rgba(26, 22, 16, 0.70) 50%,
-      rgba(26, 22, 16, 0.88) 100%
-    );
+  background: linear-gradient(
+  to bottom,
+  rgba(26, 22, 16, 0.92) 0%,
+  rgba(26, 22, 16, 0.82) 50%,
+  rgba(26, 22, 16, 0.94) 100%
+);
 }
 
 /* All direct children sit above the overlay */
@@ -549,9 +547,9 @@ code {
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(245, 240, 232, 0.82) 0%,
-    rgba(245, 240, 232, 0.70) 50%,
-    rgba(245, 240, 232, 0.88) 100%
+    rgba(245, 240, 232, 0.92) 0%,
+    rgba(245, 240, 232, 0.82) 50%,
+    rgba(245, 240, 232, 0.94) 100%
   );
   z-index: 0;
 }
@@ -559,9 +557,9 @@ code {
 [data-theme="dark"] .common-room-hero::before {
   background: linear-gradient(
     to bottom,
-    rgba(26, 22, 16, 0.82) 0%,
-    rgba(26, 22, 16, 0.70) 50%,
-    rgba(26, 22, 16, 0.88) 100%
+    rgba(26, 22, 16, 0.92) 0%,
+    rgba(26, 22, 16, 0.82) 50%,
+    rgba(26, 22, 16, 0.94) 100%
   );
 }
 
