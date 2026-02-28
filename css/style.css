@@ -1289,7 +1289,11 @@ code {
   min-width: 60px;
 }
 
-.interest-item .icon { font-size: 1.8rem; }
+.interest-item .icon {
+  font-size: 1.6rem;
+  color: var(--gold-dark);
+}
+
 
 
 /* ============================================================
