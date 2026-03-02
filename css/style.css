@@ -2,30 +2,29 @@
    PERSONAL WEBSITE — MAIN STYLESHEET
 
    Contents:
-   1.  CSS Variables & Theme System
-   2.  Reset & Base Styles
-   3.  Typography
-   4.  Navigation Bar
-   5.  Theme Toggle
-   6.  Page Header / Hero
-   7.  Network Header (D3.js Container)
-   8.  Section Layouts & Cards
-   9.  Iluminura & Ornament Accents
-   10. Page-Specific Styles
-       10a. Main Hall        (index.html)
-       10b. Common Room      (about.html)
-       10c. Cabinet of Curiosities (research.html)
-       10d. Library          (portfolio.html)
-       10e. Mail Room        (contact.html)
-   11. Footer
-   12. Animations & Transitions
-   13. Responsive Design
-   ============================================================ */
+   1. CSS Variables & Theme System
+   2. Reset & Base Styles
+   3. Typography
+   4. Navigation Bar
+   5. Theme Toggle
+   6. Page Header / Hero
+   7. Section Layouts & Cards
+   8. Iluminura & Ornament Accents
+   9. Page-Specific Styles
+      9a. Main Hall (index.html)
+      9b. Common Room (about.html)
+      9c. Cabinet of Curiosities (cabinet_curiosities.html)
+      9d. Library (bibliotheca.html)
+      9e. Mail Room (mail_room.html)
+  10. Footer
+  11. Animations & Transitions
+  12. Responsive Design
+============================================================ */
 
 
 /* ============================================================
    1. CSS VARIABLES & THEME SYSTEM
-   ============================================================ */
+============================================================ */
 
 /* — Light Mode (Default) — */
 :root {
@@ -36,12 +35,12 @@
   --bg-overlay:   rgba(245, 240, 232, 0.92);
 
   /* 1. Botanical green */
-  --green-dark:  #2D5016;
-  --green-mid:   #3E7B27;
+  --green-dark: #2D5016;
+  --green-mid:  #3E7B27;
 
   /* 2. Teal */
-  --teal:        #2A6B6B;
-  --teal-light:  #3D9B9B;
+  --teal:       #2A6B6B;
+  --teal-light: #3D9B9B;
 
   /* 3. Purpura */
   --purpura:       #6B2D6B;
@@ -49,10 +48,10 @@
   --purpura-pale:  #F0E6F0;
 
   /* 4. Dark navy blue */
-  --navy:        #1B2A4A;
-  --navy-mid:    #2E4A7A;
-  --navy-light:  #4A6FA5;
-  --navy-pale:   #E8EDF5;
+  --navy:       #1B2A4A;
+  --navy-mid:   #2E4A7A;
+  --navy-light: #4A6FA5;
+  --navy-pale:  #E8EDF5;
 
   /* 5. Burgundy */
   --burgundy:      #6B1A2A;
@@ -98,12 +97,12 @@
   --bg-overlay:   rgba(30, 28, 24, 0.92);
 
   /* 1. Botanical green — desaturated, warm */
-  --green-dark:  #5C7A3A;
-  --green-mid:   #6A8C44;
+  --green-dark: #5C7A3A;
+  --green-mid:  #6A8C44;
 
   /* 2. Teal — muted, not aqua */
-  --teal:        #3D7A7A;
-  --teal-light:  #4E9090;
+  --teal:       #3D7A7A;
+  --teal-light: #4E9090;
 
   /* 3. Purpura — dusty, not vivid */
   --purpura:       #7A4A7A;
@@ -111,10 +110,10 @@
   --purpura-pale:  #221820;
 
   /* 4. Navy — slate, not electric */
-  --navy:        #4A6080;
-  --navy-mid:    #5A7090;
-  --navy-light:  #6A85A8;
-  --navy-pale:   #171C26;
+  --navy:       #4A6080;
+  --navy-mid:   #5A7090;
+  --navy-light: #6A85A8;
+  --navy-pale:  #171C26;
 
   /* 5. Burgundy — dark rose, not fire */
   --burgundy:      #8A3045;
@@ -142,14 +141,13 @@
 }
 
 
-
 /* ============================================================
    2. RESET & BASE STYLES
-   ============================================================ */
+============================================================ */
 
 *, *::before, *::after {
   box-sizing: border-box;
-  margin: 0;
+  margin:  0;
   padding: 0;
 }
 
@@ -200,14 +198,7 @@ button {
 
 /* ============================================================
    3. TYPOGRAPHY
-   ============================================================
-   Add to <head> on every page, before style.css:
-   <link href="https://fonts.googleapis.com/css2?
-     family=IM+Fell+English:ital@0;1
-     &family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400
-     &family=Nunito:wght@300;400;600
-     &display=swap" rel="stylesheet">
-   ============================================================ */
+============================================================ */
 
 h1, h2, h3 {
   font-family: 'IM Fell English', 'Georgia', serif;
@@ -215,8 +206,8 @@ h1, h2, h3 {
   letter-spacing: 0.01em;
 }
 
-h1 { font-size: clamp(2rem,    5vw, 3.5rem);  color: var(--green-dark); }
-h2 { font-size: clamp(1.5rem,  3.5vw, 2.4rem); margin-bottom: 1rem;    color: var(--navy);     }
+h1 { font-size: clamp(2rem, 5vw, 3.5rem);     color: var(--green-dark); }
+h2 { font-size: clamp(1.5rem, 3.5vw, 2.4rem); margin-bottom: 1rem;     color: var(--navy); }
 h3 { font-size: clamp(1.15rem, 2.5vw, 1.6rem); margin-bottom: 0.6rem;  color: var(--burgundy); }
 
 h4, h5, h6 {
@@ -239,7 +230,7 @@ p:last-child { margin-bottom: 0; }
 strong { font-weight: 600; color: var(--text-primary); }
 em     { font-style: italic; color: var(--text-secondary); }
 
-/* Section title — display heading, keeps green */
+/* Section title */
 .section-title {
   font-family: 'IM Fell English', serif;
   color: var(--green-dark);
@@ -269,6 +260,7 @@ em     { font-style: italic; color: var(--text-secondary); }
   color: var(--purpura);
   margin-bottom: 0.4rem;
   display: block;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.18);
 }
 
 blockquote {
@@ -295,7 +287,7 @@ code {
 
 /* ============================================================
    4. NAVIGATION BAR
-   ============================================================ */
+============================================================ */
 
 .navbar {
   position: fixed;
@@ -312,7 +304,6 @@ code {
   transition: background-color 0.4s ease, border-color 0.4s ease;
 }
 
-/* Logo */
 .navbar-logo {
   font-family: 'IM Fell English', serif;
   font-size: 1.25rem;
@@ -325,7 +316,6 @@ code {
 .navbar-logo:hover { color: var(--burgundy); }
 .navbar-logo span  { color: var(--gold); }
 
-/* Nav links */
 .navbar-links {
   display: flex;
   align-items: center;
@@ -348,7 +338,8 @@ code {
 .navbar-links a::after {
   content: '';
   position: absolute;
-  bottom: -2px; left: 50%;
+  bottom: -2px;
+  left: 50%;
   transform: translateX(-50%);
   width: 0;
   height: 2px;
@@ -364,15 +355,14 @@ code {
 
 .navbar-links a:hover::after,
 .navbar-links a.active::after { width: 70%; }
-.navbar-links a.active        { color: var(--green-dark); }
 
-/* Right-side controls */
+.navbar-links a.active { color: var(--green-dark); }
+
 .navbar-controls {
   display: flex;
   align-items: center;
 }
 
-/* Hamburger toggle — mobile only */
 .navbar-toggle {
   display: none;
   flex-direction: column;
@@ -396,7 +386,7 @@ code {
 
 /* ============================================================
    5. THEME TOGGLE
-   ============================================================ */
+============================================================ */
 
 .theme-toggle {
   width: 36px;
@@ -422,45 +412,14 @@ code {
 
 /* ============================================================
    6. PAGE HEADER / HERO
-   ============================================================ */
+============================================================ */
 
 .page-content {
   padding-top: var(--nav-height);
   flex: 1;
 }
 
-/* Standard hero — about, research, portfolio, contact */
-.page-hero {
-  background: var(--bg-secondary);
-  border-bottom: 1px solid var(--border-color);
-  padding: clamp(2.5rem, 5vw, 4rem) clamp(1rem, 4vw, 3rem);
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.page-hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image:
-    radial-gradient(circle at 20% 50%, rgba(107, 26,  42, 0.06) 0%, transparent 60%),
-    radial-gradient(circle at 80% 50%, rgba( 27, 42,  74, 0.06) 0%, transparent 60%);
-  pointer-events: none;
-}
-
-.page-hero h1 { position: relative; z-index: 1; }
-
-.page-hero p.subtitle {
-  font-size: 1.15rem;
-  color: var(--text-muted);
-  font-style: italic;
-  max-width: 55ch;
-  margin: 0.5rem auto 0;
-  position: relative;
-  z-index: 1;
-}
-
+/* ── Main Hall hero ── */
 .hero-index {
   min-height: 100vh;
   display: flex;
@@ -471,8 +430,6 @@ code {
   padding: clamp(2rem, 6vw, 5rem) clamp(1rem, 4vw, 3rem);
   position: relative;
   overflow: hidden;
-
-  /* Manuscript image as background */
   background-image: url('../images/main_hall.jpg');
   background-size: cover;
   background-position: center top;
@@ -480,31 +437,28 @@ code {
   background-attachment: fixed;
 }
 
-/* Parchment wash overlay — keeps text legible, tints to theme */
 .hero-index::before {
   content: '';
   position: absolute;
   inset: 0;
   background: linear-gradient(
-  to bottom,
-  rgba(245, 240, 232, 0.92) 0%,
-  rgba(245, 240, 232, 0.82) 50%,
-  rgba(245, 240, 232, 0.94) 100%
-);
+    to bottom,
+    rgba(245, 240, 232, 0.82) 0%,
+    rgba(245, 240, 232, 0.70) 50%,
+    rgba(245, 240, 232, 0.88) 100%
+  );
   z-index: 0;
 }
 
-/* Dark mode overlay */
 [data-theme="dark"] .hero-index::before {
   background: linear-gradient(
-  to bottom,
-  rgba(26, 22, 16, 0.92) 0%,
-  rgba(26, 22, 16, 0.82) 50%,
-  rgba(26, 22, 16, 0.94) 100%
-);
+    to bottom,
+    rgba(26, 22, 16, 0.92) 0%,
+    rgba(26, 22, 16, 0.82) 50%,
+    rgba(26, 22, 16, 0.94) 100%
+  );
 }
 
-/* All direct children sit above the overlay */
 .hero-index > * { position: relative; z-index: 1; }
 
 .hero-index h1 {
@@ -522,8 +476,9 @@ code {
   margin: 0 auto 2rem;
 }
 
-/* Common Room hero — image-backed, 66vh */
-.common-room-hero {
+/* ── Inner page hero — all pages except Main Hall ──
+   Background image set per-page via inline style on <section>.      */
+.inner-page-hero {
   min-height: 66vh;
   display: flex;
   flex-direction: column;
@@ -533,28 +488,26 @@ code {
   padding: clamp(2rem, 6vw, 5rem) clamp(1rem, 4vw, 3rem);
   position: relative;
   overflow: hidden;
-
-  background-image: url('../images/common_room.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
 
-.common-room-hero::before {
+.inner-page-hero::before {
   content: '';
   position: absolute;
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(245, 240, 232, 0.92) 0%,
-    rgba(245, 240, 232, 0.82) 50%,
-    rgba(245, 240, 232, 0.94) 100%
+    rgba(245, 240, 232, 0.82) 0%,
+    rgba(245, 240, 232, 0.70) 50%,
+    rgba(245, 240, 232, 0.88) 100%
   );
   z-index: 0;
 }
 
-[data-theme="dark"] .common-room-hero::before {
+[data-theme="dark"] .inner-page-hero::before {
   background: linear-gradient(
     to bottom,
     rgba(26, 22, 16, 0.92) 0%,
@@ -563,9 +516,9 @@ code {
   );
 }
 
-.common-room-hero > * { position: relative; z-index: 1; }
+.inner-page-hero > * { position: relative; z-index: 1; }
 
-
+/* Shared hero utilities */
 .hero-cta {
   display: inline-flex;
   gap: 1rem;
@@ -579,10 +532,8 @@ code {
   bottom: 1.5rem;
   left: 1.2rem;
   z-index: 2;
-
   writing-mode: vertical-rl;
   transform: rotate(180deg);
-
   font-family: 'Nunito', sans-serif;
   font-size: 0.68rem;
   font-weight: 400;
@@ -596,189 +547,16 @@ code {
 
 .hero-attribution:hover { opacity: 1; }
 
-/* Institution link — teal */
-.attr-institution {
-  color: var(--teal);
-  text-decoration: none;
-}
+.attr-institution { color: var(--teal); text-decoration: none; }
+.attr-institution:hover { color: var(--teal-light); text-decoration: underline; }
 
-.attr-institution:hover {
-  color: var(--teal-light);
-  text-decoration: underline;
-}
-
-/* Manuscript link — gold */
-.attr-source {
-  color: var(--gold-dark);
-  text-decoration: none;
-}
-
-.attr-source:hover {
-  color: var(--gold);
-  text-decoration: underline;
-}
+.attr-source { color: var(--gold-dark); text-decoration: none; }
+.attr-source:hover { color: var(--gold); text-decoration: underline; }
 
 
 /* ============================================================
-   7. NETWORK HEADER (D3.js container)
-   Used on: cabinet_curiosities.html, scriptorium.html
-      7a. .network-header      — generic/legacy
-      7b. .cabinet-hero        — cabinet_curiosities.html
-      7c. .scriptorium-hero    — scriptorium.html
-   ============================================================ */
-
-
-/* 7a. Generic / legacy */
-.network-header {
-  width: 100%;
-  height: clamp(220px, 30vw, 320px);
-  position: relative;
-  overflow: hidden;
-  background: var(--bg-secondary);
-  border-bottom: 1px solid var(--border-color);
-}
-
-.network-header svg {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-
-.network-header-overlay {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none;
-  z-index: 2;
-  gap: 0.5rem;
-}
-
-.network-header-overlay h1 {
-  background: var(--bg-overlay);
-  padding: 0.4rem 1.2rem;
-  border-radius: var(--border-radius);
-  border: 1px solid var(--border-light);
-  font-size: clamp(1.6rem, 4vw, 2.8rem);
-}
-
-.network-header-overlay .subtitle {
-  font-style: italic;
-  color: var(--text-muted);
-  font-size: 1rem;
-  background: var(--bg-overlay);
-  padding: 0.2rem 0.8rem;
-  border-radius: var(--border-radius);
-}
-
-
-/* 7b. Cabinet of Curiosities — cabinet_curiosities.html */
-.cabinet-hero {
-  width: 100%;
-  min-height: clamp(260px, 35vw, 380px);
-  position: relative;
-  overflow: hidden;
-  border-bottom: 1px solid var(--border-color);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background-image: url('../images/cabinet_curiosities.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.cabinet-hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(245, 240, 232, 0.88);
-  z-index: 0;
-}
-
-[data-theme="dark"] .cabinet-hero::before {
-  background: rgba(30, 28, 24, 0.88);
-}
-
-.cabinet-hero canvas {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  display: block;
-  z-index: 1;
-}
-
-.cabinet-hero-content {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: clamp(2rem, 5vw, 4rem) clamp(1rem, 4vw, 3rem);
-  pointer-events: none;
-}
-
-
-/* 7c. Scriptorium — scriptorium.html */
-.scriptorium-hero {
-  width: 100%;
-  min-height: clamp(260px, 35vw, 380px);
-  position: relative;
-  overflow: hidden;
-  border-bottom: 1px solid var(--border-color);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background-image: url('../images/scriptorium.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.scriptorium-hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(245, 240, 232, 0.88);
-  z-index: 0;
-}
-
-[data-theme="dark"] .scriptorium-hero::before {
-  background: rgba(30, 28, 24, 0.88);
-}
-
-.scriptorium-hero canvas {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  display: block;
-  z-index: 1;
-}
-
-.scriptorium-hero-content {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: clamp(2rem, 5vw, 4rem) clamp(1rem, 4vw, 3rem);
-  pointer-events: none;
-}
-
-
-
-
-/* ============================================================
-   8. SECTION LAYOUTS & CARDS
-   ============================================================ */
+   7. SECTION LAYOUTS & CARDS
+============================================================ */
 
 .container {
   width: 100%;
@@ -788,20 +566,40 @@ code {
 }
 
 .section     { padding: var(--section-padding) 0; }
-
 .section-alt {
   background: var(--bg-secondary);
-  border-top: 1px solid var(--border-light);
+  border-top:    1px solid var(--border-light);
   border-bottom: 1px solid var(--border-light);
 }
 
-/* Grids */
-.card-grid      { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
-.card-grid-2    { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
-.two-col        { display: grid; grid-template-columns: 1fr 1fr;  gap: 3rem; align-items: start; }
-.two-col-narrow { display: grid; grid-template-columns: 2fr 3fr;  gap: 3rem; align-items: start; }
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
 
-/* Card base */
+.card-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.two-col-narrow {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: 3rem;
+  align-items: start;
+}
+
 .card {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
@@ -819,27 +617,17 @@ code {
   height: 3px;
   background: linear-gradient(
     to right,
-    var(--green-dark),
-    var(--teal),
-    var(--navy),
-    var(--burgundy),
-    var(--purpura)
+    var(--green-dark), var(--teal), var(--navy), var(--burgundy), var(--purpura)
   );
   opacity: 0;
   transition: opacity 0.3s ease;
 }
 
-.card:hover {
-  box-shadow: var(--shadow-md);
-  transform: translateY(-3px);
-}
-
+.card:hover         { box-shadow: var(--shadow-md); transform: translateY(-3px); }
 .card:hover::before { opacity: 1; }
+.card h3            { margin-bottom: 0.6rem; }
+.card p             { font-size: 1rem; color: var(--text-muted); margin-bottom: 0; }
 
-.card h3 { margin-bottom: 0.6rem; }
-.card p  { font-size: 1rem; color: var(--text-muted); margin-bottom: 0; }
-
-/* Card icon circle */
 .card-icon {
   width: 44px;
   height: 44px;
@@ -869,12 +657,12 @@ code {
   margin: 0.2rem;
 }
 
-.tag-green    { background: rgba(45,  80, 22, 0.08);  color: var(--green-dark); border-color: var(--green-mid);    }
-.tag-teal     { background: rgba(42, 107,107, 0.08);  color: var(--teal);       border-color: var(--teal-light);   }
-.tag-purpura  { background: var(--purpura-pale);       color: var(--purpura);    border-color: var(--purpura);      }
-.tag-navy     { background: var(--navy-pale);          color: var(--navy);       border-color: var(--navy-mid);     }
+.tag-green    { background: rgba(45,  80,  22, 0.08); color: var(--green-dark); border-color: var(--green-mid); }
+.tag-teal     { background: rgba(42, 107, 107, 0.08); color: var(--teal);       border-color: var(--teal-light); }
+.tag-purpura  { background: var(--purpura-pale);       color: var(--purpura);    border-color: var(--purpura); }
+.tag-navy     { background: var(--navy-pale);          color: var(--navy);       border-color: var(--navy-mid); }
 .tag-burgundy { background: var(--burgundy-pale);      color: var(--burgundy);   border-color: var(--burgundy-mid); }
-.tag-gold     { background: rgba(201,168, 76, 0.12);  color: var(--gold-dark);  border-color: var(--gold);         }
+.tag-gold     { background: rgba(201,168, 76, 0.12);  color: var(--gold-dark);  border-color: var(--gold); }
 
 /* Buttons */
 .btn {
@@ -891,79 +679,32 @@ code {
   text-align: center;
 }
 
-.btn-primary {
-  background: var(--green-dark);
-  color: var(--text-inverse);
-  border-color: var(--green-dark);
-}
-
+.btn-primary { background: var(--green-dark); color: var(--text-inverse); border-color: var(--green-dark); }
 .btn-primary:hover {
-  background: var(--green-mid);
-  border-color: var(--green-mid);
-  color: var(--text-inverse);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-sm);
+  background: var(--green-mid); border-color: var(--green-mid);
+  color: var(--text-inverse); transform: translateY(-2px); box-shadow: var(--shadow-sm);
 }
 
-.btn-outline {
-  background: transparent;
-  color: var(--purpura);
-  border-color: var(--purpura);
-}
-
-.btn-outline:hover {
-  background: var(--purpura);
-  color: #fff;
-  transform: translateY(-2px);
-}
+.btn-outline { background: transparent; color: var(--purpura); border-color: var(--purpura); }
+.btn-outline:hover { background: var(--purpura); color: #fff; transform: translateY(-2px); }
 
 [data-theme="dark"] .btn-outline {
-  color: var(--purpura-light);
-  border-color: var(--purpura-light);
+  color: var(--purpura-light); border-color: var(--purpura-light);
   background: rgba(122, 74, 122, 0.20);
 }
+[data-theme="dark"] .btn-outline:hover { background: var(--purpura); color: #fff; }
 
-[data-theme="dark"] .btn-outline:hover {
-  background: var(--purpura);
-  color: #fff;
-}
-
-.btn-navy {
-  background: var(--navy);
-  color: #fff;
-  border-color: var(--navy);
-}
-
+.btn-navy { background: var(--navy); color: #fff; border-color: var(--navy); }
 .btn-navy:hover {
-  background: var(--navy-mid);
-  border-color: var(--navy-mid);
-  color: #fff;
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-sm);
+  background: var(--navy-mid); border-color: var(--navy-mid);
+  color: #fff; transform: translateY(-2px); box-shadow: var(--shadow-sm);
 }
 
-.btn-burgundy {
-  background: transparent;
-  color: var(--burgundy);
-  border-color: var(--burgundy);
-}
+.btn-burgundy { background: transparent; color: var(--burgundy); border-color: var(--burgundy); }
+.btn-burgundy:hover { background: var(--burgundy); color: #fff; transform: translateY(-2px); }
 
-.btn-burgundy:hover {
-  background: var(--burgundy);
-  color: #fff;
-  transform: translateY(-2px);
-}
-
-.btn-ghost {
-  background: transparent;
-  color: var(--text-secondary);
-  border-color: var(--border-color);
-}
-
-.btn-ghost:hover {
-  background: var(--bg-secondary);
-  color: var(--text-primary);
-}
+.btn-ghost { background: transparent; color: var(--text-secondary); border-color: var(--border-color); }
+.btn-ghost:hover { background: var(--bg-secondary); color: var(--text-primary); }
 
 /* Ornament divider */
 .ornament-divider {
@@ -988,12 +729,10 @@ code {
 }
 
 
-
 /* ============================================================
-   9. ILUMINURA & ORNAMENT ACCENTS
-   ============================================================ */
+   8. ILUMINURA & ORNAMENT ACCENTS
+============================================================ */
 
-/* Drop cap */
 .drop-cap::first-letter {
   font-family: 'IM Fell English', serif;
   font-size: 4.2rem;
@@ -1004,9 +743,6 @@ code {
   text-shadow: 2px 2px 0 var(--gold);
 }
 
-
-
-/* Star corner mark */
 .card-ornament { position: relative; }
 
 .card-ornament::after {
@@ -1021,7 +757,6 @@ code {
 
 .card-ornament:hover::after { opacity: 0.7; }
 
-/* Illuminated left border — all five colours */
 .iluminura-border {
   border-left: 4px solid transparent;
   padding-left: 1.2rem;
@@ -1032,28 +767,21 @@ code {
   content: '';
   position: absolute;
   top: 0; left: 0;
-  width: 4px;
-  height: 100%;
+  width: 4px; height: 100%;
   background: linear-gradient(
     to bottom,
-    var(--gold),
-    var(--burgundy),
-    var(--purpura),
-    var(--navy),
-    var(--teal)
+    var(--gold), var(--burgundy), var(--purpura), var(--navy), var(--teal)
   );
   border-radius: 2px;
 }
 
-/* Manuscript initial block */
 .manuscript-initial {
   display: inline-block;
   background: var(--navy);
   color: #fff;
   font-family: 'IM Fell English', serif;
   font-size: 2rem;
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 2.5rem; height: 2.5rem;
   text-align: center;
   line-height: 2.5rem;
   border-radius: 4px;
@@ -1062,7 +790,6 @@ code {
   vertical-align: middle;
 }
 
-/* Star cluster — used under headings and in dividers */
 .star-cluster {
   display: block;
   text-align: center;
@@ -1071,21 +798,13 @@ code {
   color: var(--gold);
 }
 
-.star-sm {
-  font-size: 0.7em;
-  opacity: 0.75;
-  vertical-align: middle;
-}
+.star-sm { font-size: 0.7em;  opacity: 0.75; vertical-align: middle; }
+.star-lg { font-size: 1.4em;  vertical-align: middle; margin: 0 0.05em; }
 
-.star-lg {
-  font-size: 1.4em;
-  vertical-align: middle;
-  margin: 0 0.05em;
-}
 
 /* ============================================================
-   10a. MAIN HALL — main_hall.html
-   ============================================================ */
+   9a. MAIN HALL — index.html
+============================================================ */
 
 .hall-nav-grid {
   display: grid;
@@ -1094,74 +813,6 @@ code {
   margin-top: 2.5rem;
 }
 
-.hall-nav-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
-  border-radius: var(--card-radius);
-  padding: 1.5rem 1.2rem;
-  text-align: center;
-  transition: var(--transition-normal);
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  display: block;
-}
-
-/* Each room card gets its own signature colour on hover */
-.hall-nav-card::after {
-  content: '';
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  height: 3px;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.3s ease;
-}
-
-.hall-nav-card:nth-child(1)::after { background: var(--green-dark); }
-.hall-nav-card:nth-child(2)::after { background: var(--navy);       }
-.hall-nav-card:nth-child(3)::after { background: var(--burgundy);   }
-.hall-nav-card:nth-child(4)::after { background: var(--purpura);    }
-
-.hall-nav-card:hover {
-  box-shadow: var(--shadow-md);
-  transform: translateY(-4px);
-  border-color: var(--gold);
-  color: inherit;
-}
-
-.hall-nav-card:hover::after { transform: scaleX(1); }
-
-.hall-nav-card .room-icon   { font-size: 2rem; margin-bottom: 0.7rem; display: block; }
-.hall-nav-card h3           { font-size: 1rem;    margin-bottom: 0.3rem; }
-.hall-nav-card p            { font-size: 0.88rem; color: var(--text-muted); margin: 0; }
-
-/* Override h3 burgundy colour inside nav cards to match room accent */
-.hall-nav-card:nth-child(1) h3 { color: var(--green-dark); }
-.hall-nav-card:nth-child(2) h3 { color: var(--navy);       }
-.hall-nav-card:nth-child(3) h3 { color: var(--burgundy);   }
-.hall-nav-card:nth-child(4) h3 { color: var(--purpura);    }
-.hall-nav-card:nth-child(5)::after { background: var(--teal); }
-.hall-nav-card:nth-child(5) h3     { color: var(--teal);      }
-
-/* Profile block */
-.profile-block {
-  display: flex;
-  gap: 2.5rem;
-  align-items: flex-start;
-}
-
-.profile-portrait {
-  width:  clamp(130px, 20vw, 190px);
-  height: clamp(130px, 20vw, 190px);
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid var(--gold);
-  box-shadow: 0 0 0 6px var(--bg-secondary), var(--shadow-md);
-  flex-shrink: 0;
-}
-
-/* Image-backed room nav cards */
 .hall-nav-card {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
@@ -1176,6 +827,41 @@ code {
   min-height: 180px;
 }
 
+.hall-nav-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.hall-nav-card:nth-child(1)::after { background: var(--green-dark); }
+.hall-nav-card:nth-child(2)::after { background: var(--navy); }
+.hall-nav-card:nth-child(3)::after { background: var(--burgundy); }
+.hall-nav-card:nth-child(4)::after { background: var(--purpura); }
+.hall-nav-card:nth-child(5)::after { background: var(--teal); }
+
+.hall-nav-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+  border-color: var(--gold);
+  color: inherit;
+}
+
+.hall-nav-card:hover::after { transform: scaleX(1); }
+
+.hall-nav-card .room-icon { font-size: 2rem; margin-bottom: 0.7rem; display: block; }
+.hall-nav-card h3          { font-size: 1rem; margin-bottom: 0.3rem; }
+.hall-nav-card p           { font-size: 0.88rem; color: var(--text-muted); margin: 0; }
+
+.hall-nav-card:nth-child(1) h3 { color: var(--green-dark); }
+.hall-nav-card:nth-child(2) h3 { color: var(--navy); }
+.hall-nav-card:nth-child(3) h3 { color: var(--burgundy); }
+.hall-nav-card:nth-child(4) h3 { color: var(--purpura); }
+.hall-nav-card:nth-child(5) h3 { color: var(--teal); }
+
 .hall-nav-card-bg {
   position: absolute;
   inset: 0;
@@ -1186,9 +872,7 @@ code {
   z-index: 0;
 }
 
-.hall-nav-card:hover .hall-nav-card-bg {
-  transform: scale(1.05);
-}
+.hall-nav-card:hover .hall-nav-card-bg { transform: scale(1.05); }
 
 .hall-nav-card-overlay {
   position: absolute;
@@ -1237,11 +921,9 @@ code {
   justify-content: center;
 }
 
-/* Card attribution — vertical, lower left */
 .card-attribution {
   position: absolute;
-  bottom: 0.8rem;
-  left: 0.6rem;
+  bottom: 0.8rem; left: 0.6rem;
   z-index: 3;
   writing-mode: vertical-rl;
   transform: rotate(180deg);
@@ -1255,16 +937,28 @@ code {
   text-decoration: none;
 }
 
-.card-attribution:hover {
-  opacity: 1;
-  color: var(--teal);
+.card-attribution:hover { opacity: 1; color: var(--teal); }
+
+.profile-block {
+  display: flex;
+  gap: 2.5rem;
+  align-items: flex-start;
+}
+
+.profile-portrait {
+  width:  clamp(130px, 20vw, 190px);
+  height: clamp(130px, 20vw, 190px);
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--gold);
+  box-shadow: 0 0 0 6px var(--bg-secondary), var(--shadow-md);
+  flex-shrink: 0;
 }
 
 
-
 /* ============================================================
-   10b. COMMON ROOM — common_room.html
-   ============================================================ */
+   9b. COMMON ROOM — common_room.html
+============================================================ */
 
 .timeline {
   position: relative;
@@ -1278,12 +972,8 @@ code {
   width: 2px;
   background: linear-gradient(
     to bottom,
-    var(--gold),
-    var(--green-dark),
-    var(--teal),
-    var(--navy),
-    var(--burgundy),
-    var(--purpura)
+    var(--gold), var(--green-dark), var(--teal),
+    var(--navy), var(--burgundy), var(--purpura)
   );
   border-radius: 2px;
 }
@@ -1344,16 +1034,12 @@ code {
   min-width: 60px;
 }
 
-.interest-item .icon {
-  font-size: 1.6rem;
-  color: var(--gold-dark);
-}
-
+.interest-item .icon { font-size: 1.6rem; color: var(--gold-dark); }
 
 
 /* ============================================================
-   10c. CABINET OF CURIOSITIES — cabinet_curiosities.html
-   ============================================================ */
+   9c. CABINET OF CURIOSITIES — cabinet_curiosities.html
+============================================================ */
 
 .research-item {
   background: var(--bg-card);
@@ -1364,10 +1050,7 @@ code {
   transition: var(--transition-normal);
 }
 
-.research-item:hover {
-  box-shadow: var(--shadow-md);
-  border-color: var(--gold);
-}
+.research-item:hover { box-shadow: var(--shadow-md); border-color: var(--gold); }
 
 .research-meta {
   display: flex;
@@ -1387,14 +1070,40 @@ code {
   border-radius: 20px;
 }
 
-.status-active      { background: rgba(45, 80, 22, 0.12); color: var(--green-dark); border: 1px solid var(--green-mid);    }
-.status-completed   { background: rgba(201,168, 76, 0.15); color: var(--gold-dark);  border: 1px solid var(--gold);         }
-.status-forthcoming { background: var(--navy-pale);         color: var(--navy);       border: 1px solid var(--navy-mid);    }
+.status-active      { background: rgba(45,80,22,0.12);   color: var(--green-dark); border: 1px solid var(--green-mid); }
+.status-completed   { background: rgba(201,168,76,0.15); color: var(--gold-dark);  border: 1px solid var(--gold); }
+.status-forthcoming { background: var(--navy-pale);       color: var(--navy);       border: 1px solid var(--navy-mid); }
+
+/* MSc Thesis network background */
+.thesis-network-wrap {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--card-radius);
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.thesis-network-wrap svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  opacity: 0.18;
+  transition: opacity 0.4s ease;
+}
+
+.thesis-network-wrap:hover svg { opacity: 0.35; }
+
+.thesis-network-content {
+  position: relative;
+  z-index: 1;
+}
 
 
 /* ============================================================
-   10d. LIBRARY — bibliotheca.html
-   ============================================================ */
+   9d. LIBRARY — bibliotheca.html
+============================================================ */
 
 .filter-tabs {
   display: flex;
@@ -1420,8 +1129,8 @@ code {
   background: transparent;
 }
 
-.filter-tab:hover  { background: var(--bg-secondary); color: var(--green-dark);  border-color: var(--border-color); }
-.filter-tab.active { background: var(--bg-secondary); color: var(--gold-dark);   border-color: var(--gold);         }
+.filter-tab:hover  { background: var(--bg-secondary); color: var(--green-dark); border-color: var(--border-color); }
+.filter-tab.active { background: var(--bg-secondary); color: var(--gold-dark);  border-color: var(--gold); }
 
 .portfolio-card {
   background: var(--bg-card);
@@ -1431,10 +1140,7 @@ code {
   transition: var(--transition-normal);
 }
 
-.portfolio-card:hover {
-  box-shadow: var(--shadow-md);
-  transform: translateY(-4px);
-}
+.portfolio-card:hover { box-shadow: var(--shadow-md); transform: translateY(-4px); }
 
 .portfolio-card-img {
   width: 100%;
@@ -1451,12 +1157,16 @@ code {
 .portfolio-card-body { padding: 1.3rem 1.5rem; }
 .portfolio-card h3   { font-size: 1.15rem; margin-bottom: 0.5rem; }
 
-.portfolio-links { display: flex; gap: 0.6rem; margin-top: 1rem; }
+.portfolio-links {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
 
 
 /* ============================================================
-   10e. MAIL ROOM — mail_room.html
-   ============================================================ */
+   9e. MAIL ROOM — mail_room.html
+============================================================ */
 
 .contact-wrapper {
   display: grid;
@@ -1514,8 +1224,7 @@ code {
 }
 
 .ci-icon {
-  width: 36px;
-  height: 36px;
+  width: 36px; height: 36px;
   border-radius: 50%;
   background: var(--navy-pale);
   display: flex;
@@ -1526,8 +1235,9 @@ code {
   flex-shrink: 0;
 }
 
-.contact-form  { display: flex; flex-direction: column; gap: 1.1rem; }
-.form-group    { display: flex; flex-direction: column; gap: 0.35rem; }
+.contact-form { display: flex; flex-direction: column; gap: 1.1rem; }
+
+.form-group { display: flex; flex-direction: column; gap: 0.35rem; }
 
 .form-group label {
   font-family: 'Nunito', sans-serif;
@@ -1563,8 +1273,8 @@ code {
 
 
 /* ============================================================
-   11. FOOTER
-   ============================================================ */
+   10. FOOTER
+============================================================ */
 
 footer {
   background: var(--bg-secondary);
@@ -1614,13 +1324,10 @@ footer {
   margin-right: auto;
 }
 
-/* Scroll-to-top */
 #scroll-top {
   position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  width: 42px;
-  height: 42px;
+  bottom: 2rem; right: 2rem;
+  width: 42px; height: 42px;
   border-radius: 50%;
   background: var(--green-dark);
   color: #fff;
@@ -1638,21 +1345,13 @@ footer {
   box-shadow: var(--shadow-md);
 }
 
-#scroll-top.visible {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateY(0);
-}
-
-#scroll-top:hover {
-  background: var(--teal);
-  box-shadow: var(--shadow-lg);
-}
+#scroll-top.visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
+#scroll-top:hover   { background: var(--teal); box-shadow: var(--shadow-lg); }
 
 
 /* ============================================================
-   12. ANIMATIONS & TRANSITIONS
-   ============================================================ */
+   11. ANIMATIONS & TRANSITIONS
+============================================================ */
 
 .reveal {
   opacity: 0;
@@ -1660,10 +1359,7 @@ footer {
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+.reveal.visible { opacity: 1; transform: translateY(0); }
 
 .stagger-children > * {
   opacity: 0;
@@ -1676,11 +1372,7 @@ footer {
 .stagger-children.visible > *:nth-child(3) { transition-delay: 0.19s; }
 .stagger-children.visible > *:nth-child(4) { transition-delay: 0.26s; }
 .stagger-children.visible > *:nth-child(5) { transition-delay: 0.33s; }
-
-.stagger-children.visible > * {
-  opacity: 1;
-  transform: translateY(0);
-}
+.stagger-children.visible > *              { opacity: 1; transform: translateY(0); }
 
 @keyframes goldShimmer {
   0%, 100% { opacity: 0.55; }
@@ -1691,7 +1383,7 @@ footer {
 
 @keyframes waxPulse {
   0%, 100% { box-shadow: 0 3px 0 var(--burgundy-mid), var(--shadow-sm); }
-  50%       { box-shadow: 0 3px 0 var(--burgundy-mid), 0 0 18px rgba(107, 26, 42, 0.28); }
+  50%       { box-shadow: 0 3px 0 var(--burgundy-mid), 0 0 18px rgba(107,26,42,0.28); }
 }
 
 @keyframes pageFadeIn {
@@ -1703,18 +1395,14 @@ footer {
 
 
 /* ============================================================
-   13. RESPONSIVE DESIGN
-   ============================================================ */
+   12. RESPONSIVE DESIGN
+============================================================ */
 
 @media (max-width: 1000px) {
-  .hall-nav-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}   
-
+  .hall-nav-grid { grid-template-columns: repeat(3, 1fr); }
+}
 
 @media (max-width: 900px) {
-
   .two-col,
   .two-col-narrow,
   .contact-wrapper { grid-template-columns: 1fr; gap: 2rem; }
@@ -1741,19 +1429,14 @@ footer {
   }
 
   .navbar-links a:last-child { border-bottom: none; }
-  .navbar-toggle             { display: flex; }
 
-  .profile-block {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
+  .navbar-toggle { display: flex; }
 
+  .profile-block { flex-direction: column; align-items: center; text-align: center; }
   .profile-block p { margin: 0 auto; }
 }
 
 @media (max-width: 600px) {
-
   :root { --section-padding: 2.5rem; }
 
   h1 { font-size: clamp(1.8rem, 8vw, 2.5rem); }
@@ -1763,21 +1446,14 @@ footer {
   .hall-nav-grid { grid-template-columns: 1fr; }
 
   .hero-cta     { flex-direction: column; align-items: center; }
-
   .footer-inner { flex-direction: column; text-align: center; }
   .footer-links { justify-content: center; }
 
-  .network-header         { height: 180px; }
   .drop-cap::first-letter { font-size: 3rem; }
 }
 
 @media print {
-  .navbar,
-  .theme-toggle,
-  .network-header,
-  .hero-cta,
-  footer          { display: none !important; }
-
-  body            { background: white; color: black; }
-  .page-content   { padding-top: 0; }
+  .navbar, .theme-toggle, .hero-cta, footer { display: none !important; }
+  body { background: white; color: black; }
+  .page-content { padding-top: 0; }
 }
