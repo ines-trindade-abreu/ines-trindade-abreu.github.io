@@ -728,6 +728,37 @@ code {
   margin: 0 1rem;
 }
 
+/* ---- particles network section ---- */
+.particles-wrap {
+  position: relative;
+  height: 420px;        /* adjust to taste */
+  overflow: hidden;
+  border-radius: var(--card-radius);
+}
+
+/* #particles-js is position: absolute, needs the parent above to anchor it */
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-secondary); /* follows dark mode automatically */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+/* any content you want overlaid on top of the canvas */
+.particles-content {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
 
 /* ============================================================
    8. ILUMINURA & ORNAMENT ACCENTS
@@ -1074,7 +1105,7 @@ code {
 .status-completed   { background: rgba(201,168,76,0.15); color: var(--gold-dark);  border: 1px solid var(--gold); }
 .status-forthcoming { background: var(--navy-pale);       color: var(--navy);       border: 1px solid var(--navy-mid); }
 
-/* MSc Thesis network background */
+/* MS Thesis network background */
 .thesis-network-wrap {
   position: relative;
   overflow: hidden;
@@ -1100,6 +1131,16 @@ code {
   z-index: 1;
 }
 
+/* particles behind thesis card */
+.card #particles-js {
+  opacity: 0.15;
+  background-color: transparent;
+}
+
+.card:hover #particles-js {
+  opacity: 0.28;
+  transition: opacity 0.4s ease;
+}
 
 /* ============================================================
    9d. LIBRARY — bibliotheca.html

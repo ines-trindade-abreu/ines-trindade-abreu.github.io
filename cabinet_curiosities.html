@@ -107,7 +107,7 @@
               communities of scholars across time.
             </p>
             <p>
-              My MSc thesis brings these two worlds together, applying network analysis to the
+              My MS thesis brings these two worlds together, applying network analysis to the
               early radioactivity community — a moment in history when the discipline was being
               invented, the rules were still being written, and some of the most important
               contributors were women navigating a deeply unequal field.
@@ -167,9 +167,15 @@
       <div class="container">
 
         <span class="section-label">Current Work</span>
-        <h2 class="section-title" id="thesis-heading">MSc Thesis</h2>
+        <h2 class="section-title" id="thesis-heading">MS Thesis</h2>
 
         <div class="card reveal" style="max-width: 860px; margin: 0 auto;">
+            <!-- particles canvas — sits behind everything, fills the card -->
+          <div id="particles-js"></div>
+
+          <!-- wrapper lifts all content above the canvas -->
+          <div style="position: relative; z-index: 1;">
+            
           <div style="display: flex; align-items: flex-start; gap: 1.2rem; flex-wrap: wrap; margin-bottom: 1.4rem;">
             <div class="card-icon" style="background: var(--purpura-pale); color: var(--purpura); flex-shrink: 0;">
               <i class="fas fa-network-wired"></i>
@@ -186,33 +192,19 @@
                 in the Radioactivity Community, 1898–1938"
               </h3>
               <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 0.3rem; font-family: var(--font-ui);">
-                MSc in Engineering Physics · Instituto Superior Técnico, Universidade de Lisboa · Pending approval
+                MS in Engineering Physics · Instituto Superior Técnico, Universidade de Lisboa · Pending approval
               </p>
             </div>
           </div>
 
           <div class="iluminura-border" style="padding: 1rem 1.2rem; margin-bottom: 1.4rem;">
             <p style="margin: 0; font-style: italic; color: var(--text-secondary); font-size: 0.95rem;">
-              How does scientific knowledge spread through a community of scholars? Who were the
-              gatekeepers, the bridges, the early adopters — and what role did gender play in
-              shaping who was cited, who was read, and who was forgotten?
+              How does a scientific claim — born in a single laboratory, authored by a single researcher — travel through a community of scholars, institutions, and communication channels until it becomes an accepted fact of physics? Who are the gatekeepers, the bridges, and the early adopters — and what role did gender play in determining who was cited, who was credited, and who was forgotten? What happens when that same knowledge escapes the scientific network and diffuses into commercial and industrial spaces stripped of its epistemic safeguards — and who bears the cost when it does? And what does the structure of a historical communication network reveal about power, when the very channels that validated one woman's science were used to suppress the evidence of thousands of others?
             </p>
           </div>
 
           <p>
-            This thesis constructs and analyses a <strong>temporal citation network</strong> of
-            the early radioactivity community between 1898 and 1938 — from Becquerel's discovery
-            through to the onset of nuclear fission. Using tools from network science
-            (centrality measures, community detection, temporal analysis), the work traces how
-            knowledge about radioactivity diffused through an international scholarly network,
-            with particular attention to the structural position and influence of
-            <strong>Marie Curie</strong> and other women researchers in a field that was simultaneously
-            being defined and gatekept.
-          </p>
-          <p>
-            The project draws on digitised historical literature, bibliometric databases, and
-            computational methods in Python, and is situated at the intersection of physics,
-            history, and the sociology of science.
+            This thesis constructs and analyses a temporal communication network of the early radioactivity community between 1898 and 1938 — from Becquerel's discovery through to the onset of nuclear fission — with Marie Curie as both its central node and its most revealing case study. By combining computational network analysis (centrality measures, community detection, diffusion modelling) with history of science, science and technology studies, and feminist science scholarship, the work traces how radioactive knowledge was simultaneously institutionalized as rigorous physics and exploited as commercial spectacle, while the women most exposed to its dangers — the Radium Girls — were systematically denied the credibility that Curie herself had spent a career fighting to establish. Drawing on digitised correspondence archives, bibliometric data, Nobel committee records, and industrial legal documents, this thesis argues that Curie's story is not one of triumphant genius overcoming adversity: it is a case study in how credibility, gender, and institutional power shape what counts as scientific knowledge, who gets to make it, and what happens when that knowledge diffuses unevenly through society.
           </p>
 
           <div style="margin-top: 1.2rem; display: flex; gap: 0.8rem; flex-wrap: wrap;">
@@ -288,15 +280,13 @@
             </div>
             <div class="research-meta">
               <span class="research-status status-active">Active</span>
-              <span class="tag tag-purpura">Women in Science</span>
+              <span class="tag tag-purpura">Women in STEM</span>
               <span class="tag tag-teal">History</span>
             </div>
-            <h3>Women in the Radioactivity Community</h3>
+            <h3>Women in Science</h3>
             <p>
-              A sustained interest in the women who contributed to the early radioactivity
-              community — their scientific roles, their institutional positions, their erasure,
-              and their partial recovery in the historical record. Underpins much of the
-              MSc thesis work.
+              A sustained interest in the women who contributed to the early and modern science — their roles and institutional positions, their ideas, workflow and results, their erasure
+              and partial recovery in the historical record.
             </p>
           </article>
 
@@ -474,11 +464,22 @@
   <!-- ============================================================
        SCRIPTS
        ============================================================ -->
-  <script src="js/network-header.js" defer></script>
   <script src="js/main.js" defer></script>
   <script>
     document.getElementById('footer-year').textContent = new Date().getFullYear();
   </script>
+
+  <!-- SCRIPTS -->
+<script src="js/main.js" defer></script>
+
+<!-- particles.js library -->
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<!-- stats.js library (for the particle counter overlay) -->
+<script src="https://cdn.jsdelivr.net/npm/stats.js@0.17.0/build/stats.min.js"></script>
+<!-- particles config -->
+<script src="js/bibliotheca-particles.js"></script>
+
+<script>document.getElementById('footer-year').textContent = new Date().getFullYear()</script>
 
 </body>
 </html>
