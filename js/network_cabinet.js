@@ -7,11 +7,12 @@
 function getParticleColors() {
   const style = getComputedStyle(document.documentElement);
   return {
-    node: style.getPropertyValue('--navy').trim()     || '#1b2a4a',
-    line: style.getPropertyValue('--navy-mid').trim() || '#2e4a7a',
-    bg:   style.getPropertyValue('--bg-secondary').trim() || '#ede4d0',
+    node: style.getPropertyValue('--navy').trim().replace(/\s+/g, '')     || '#1b2a4a',
+    line: style.getPropertyValue('--navy-mid').trim().replace(/\s+/g, '') || '#2e4a7a',
+    bg:   style.getPropertyValue('--bg-secondary').trim().replace(/\s+/g, '') || '#ede4d0',
   };
 }
+
 
 function initParticles() {
   const c = getParticleColors();
@@ -73,9 +74,10 @@ function destroyParticles() {
 document.addEventListener('DOMContentLoaded', () => {
   if (!document.getElementById('particles-js')) return;
 
-  initParticles();
+  setTimeout(() => {
+    initParticles();
+  }, 50);
 
-  /* Re-init on theme toggle — same MutationObserver pattern as network-header.js */
   const themeObserver = new MutationObserver(() => {
     destroyParticles();
     initParticles();
@@ -85,6 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
     attributeFilter: ['data-theme'],
   });
 });
+
 
 /* ---- stats.js config (remove counter in production) ---- */
 /*var count_particles, stats, update;
