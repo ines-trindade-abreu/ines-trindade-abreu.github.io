@@ -16,27 +16,28 @@ function getParticleColors() {
 
 function initParticles() {
   const c = getParticleColors();
+  console.log('particle colors:', c); // ← add this
   particlesJS("particles-js", {
     "particles": {
-      "number": { "value": 500, "density": { "enable": true, "value_area": 800 } },
+      "number": { "value": 400, "density": { "enable": true, "value_area": 800 } },
       "color": { "value": c.node },
       "shape": {
         "type": "circle",
         "stroke": { "width": 0, "color": c.node },
-        "polygon": { "nb_sides": 5 },
+        "polygon": { "nb_sides": 7 },
         "image": { "src": "", "width": 100, "height": 100 }
       },
       "opacity": {
         "value": 1, "random": false,
-        "anim": { "enable": false, "speed": 2, "opacity_min": 3, "sync": false }
+        "anim": { "enable": false, "speed": 2, "opacity_min": 0, "sync": false }
       },
       "size": {
-        "value": 8, "random": true,
+        "value": 5, "random": true,
         "anim": { "enable": false, "speed": 20, "size_min": 0, "sync": false }
       },
       "line_linked": {
         "enable": true, "distance": 150,
-        "color": c.line, "opacity": 0.6, "width": 1
+        "color": c.line, "opacity": 0.5, "width": 1
       },
       "move": {
         "enable": true, "speed": 6, "direction": "none",
@@ -48,14 +49,13 @@ function initParticles() {
     "interactivity": {
       "detect_on": "canvas",
       "events": {
-        "onhover": { "enable": true, "mode": "grab" },
-        "onclick": { "enable": true, "mode": "push" },
+        "onhover": { "enable": true, "mode": "repulse" },
         "resize": true
       },
       "modes": {
         "grab":    { "distance": 140, "line_linked": { "opacity": 1 } },
-        "bubble":  { "distance": 400, "size": 80, "duration": 2, "opacity": 8, "speed": 3 },
-        "repulse": { "distance": 200, "duration": 0.4 },
+        "bubble":  { "distance": 400, "size": 5, "duration": 2, "opacity": 8, "speed": 3 },
+        "repulse": { "distance": 80, "duration": 80 },
         "push":    { "particles_nb": 4 },
         "remove":  { "particles_nb": 2 }
       }
