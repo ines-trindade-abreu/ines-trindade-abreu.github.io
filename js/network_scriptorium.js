@@ -1,6 +1,6 @@
 /* ============================================================
-   BIBLIOTHECA PARTICLES — particles.js config
-   Reads --burgundy and --burgundy-mid from CSS variables
+   SCRIPTORIUM PARTICLES — particles.js config
+   Reads --purpura and --purpura-light from CSS variables
    so colours follow the dark/light mode toggle.
 ============================================================ */
 
@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* ---- stats.js config (remove counter in production) ---- */
-var count_particles, stats, update;
+/*var count_particles, stats, update;
 stats = new Stats;
 stats.setMode(0);
 stats.domElement.style.position = 'absolute';
@@ -103,4 +103,4 @@ update = function() {
   }
   requestAnimationFrame(update);
 };
-requestAnimationFrame(update);
+requestAnimationFrame(update);*/
