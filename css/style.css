@@ -1119,6 +1119,30 @@ code {
   background-color: transparent;
 }
 
+.particles-attribution {
+  position: absolute;
+  bottom: 0.6rem;
+  left: 1.2rem;
+  z-index: 2;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  opacity: 0.6;
+  margin: 0;
+  max-width: none;
+}
+
+.particles-attribution a {
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.particles-attribution a:hover {
+  color: var(--teal);
+  text-decoration: underline;
+}
 
 /* ============================================================
    9d. LIBRARY — bibliotheca.html
