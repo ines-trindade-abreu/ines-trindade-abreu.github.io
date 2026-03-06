@@ -164,18 +164,16 @@
 
     <!-- ── MSC THESIS ────────────────────────────────────────── -->
     <section class="section section-alt" aria-labelledby="thesis-heading">
-      <div class="container">
+
+      <!-- particles canvas — fills section background -->
+      <div id="particles-js"></div>
+
+      <div class="container" style="position: relative; z-index: 1;">
 
         <span class="section-label">Current Work</span>
         <h2 class="section-title" id="thesis-heading">MS Thesis</h2>
 
         <div class="card reveal" style="max-width: 860px; margin: 0 auto;">
-            <!-- particles canvas — sits behind everything, fills the card -->
-          <div id="particles-js"></div>
-
-          <!-- wrapper lifts all content above the canvas -->
-          <div style="position: relative; z-index: 1;">
-            
           <div style="display: flex; align-items: flex-start; gap: 1.2rem; flex-wrap: wrap; margin-bottom: 1.4rem;">
             <div class="card-icon" style="background: var(--purpura-pale); color: var(--purpura); flex-shrink: 0;">
               <i class="fas fa-network-wired"></i>
@@ -474,10 +472,9 @@
 
 <!-- particles.js library -->
 <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-<!-- stats.js library (for the particle counter overlay) -->
 <script src="https://cdn.jsdelivr.net/npm/stats.js@0.17.0/build/stats.min.js"></script>
-<!-- particles config -->
-<script src="js/bibliotheca-particles.js"></script>
+<script src="js/network_cabinet.js"></script>
+
 
 <script>document.getElementById('footer-year').textContent = new Date().getFullYear()</script>
 
