@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Inês da Trindade Abreu — Work in Progress">
+    <title>Inês da Trindade Abreu</title>
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* ── CSS Variables ────────────────────────────────────── */
+        :root {
+            --bg-primary: #F5F0E8;
+            --bg-secondary: #EDE4D0;
+            --bg-card: #FAF7F2;
+            --green-dark: #2D5016;
+            --teal: #2A6B6B;
+            --purpura: #6B2D6B;
+            --navy: #1B2A4A;
+            --burgundy: #6B1A2A;
+            --gold: #C9A84C;
+            --gold-dark: #8B6914;
+            --text-primary: #1C1C1A;
+            --text-secondary: #4A4035;
+            --text-muted: #7A6E5F;
+            --border-color: #C4B49A;
+            --border-light: #DDD4BE;
+            --shadow-lg: 0 8px 32px rgba(44, 30, 10, 0.18);
+        }
+        [data-theme="dark"] {
+            --bg-primary: #1E1C18;
+            --bg-secondary: #252318;
+            --bg-card: #2C291E;
+            --green-dark: #5C7A3A;
+            --teal: #3D7A7A;
+            --purpura: #7A4A7A;
+            --navy: #4A6080;
+            --burgundy: #8A3045;
+            --gold: #B8943A;
+            --gold-dark: #9A7820;
+            --text-primary: #E8E0CC;
+            --text-secondary: #B8A888;
+            --text-muted: #7A6E5A;
+            --border-color: #3A3228;
+            --border-light: #302C22;
+            --shadow-lg: 0 8px 32px rgba(0,0,0,0.55);
+        }
+
+        /* ── Reset & Base ─────────────────────────────────────── */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { font-size: 16px; }
+        body {
+            font-family: 'Crimson Pro', Georgia, serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.4s ease, color 0.4s ease;
+            padding: 3rem 1.2rem;
+            position: relative;
+        }
+
+        /* ── Ambient parchment glow ───────────────────────────── */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image:
+                radial-gradient(circle at 12% 18%, rgba(201,168,76,0.07) 0, transparent 42%),
+                radial-gradient(circle at 88% 82%, rgba(107,26,42,0.06) 0, transparent 42%),
+                radial-gradient(circle at 50% 50%, rgba(27,42,74,0.04) 0, transparent 58%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* ── Theme Toggle ─────────────────────────────────────── */
+        .theme-toggle {
+            position: fixed;
+            top: 1.1rem;
+            right: 1.4rem;
+            width: 38px; height: 38px;
+            border-radius: 50%;
+            border: 1px solid var(--border-color);
+            background: var(--bg-secondary);
+            color: var(--text-secondary);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 100;
+        }
+        .theme-toggle:hover { background: var(--bg-card); color: var(--purpura); border-color: var(--purpura); }
+
+        /* ── Notice Card ──────────────────────────────────────── */
+        .notice {
+            position: relative;
+            z-index: 1;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            max-width: 660px;
+            width: 100%;
+            padding: clamp(2.8rem, 7vw, 4.5rem) clamp(2rem, 6vw, 4.5rem);
+            box-shadow: var(--shadow-lg);
+            text-align: center;
+            animation: pageFadeIn 0.6s ease forwards;
+        }
+        /* Five-colour illuminated top bar */
+        .notice::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: linear-gradient(to right, var(--gold), var(--burgundy), var(--purpura), var(--navy), var(--teal), var(--green-dark));
+            border-radius: 6px 6px 0 0;
+        }
+
+        /* ── Wax Seal ─────────────────────────────────────────── */
+        .wax-seal {
+            width: 68px; height: 68px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 36% 36%, var(--burgundy), #3A0A14);
+            border: 3px solid var(--gold);
+            box-shadow: 0 3px 10px rgba(107,26,42,0.4), inset 0 1px 4px rgba(255,255,255,0.08);
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 2rem;
+            font-family: 'IM Fell English', serif;
+            font-size: 1.6rem;
+            color: var(--gold);
+            animation: sealPulse 4s ease-in-out infinite;
+        }
+        @keyframes sealPulse {
+            0%, 100% { box-shadow: 0 3px 10px rgba(107,26,42,0.4), inset 0 1px 4px rgba(255,255,255,0.08); }
+            50%       { box-shadow: 0 3px 20px rgba(107,26,42,0.6), 0 0 28px rgba(201,168,76,0.22), inset 0 1px 4px rgba(255,255,255,0.08); }
+        }
+
+        /* ── Section label ────────────────────────────────────── */
+        .section-label {
+            font-family: 'Nunito', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--purpura);
+            display: block;
+            margin-bottom: 0.7rem;
+        }
+
+        /* ── Heading ──────────────────────────────────────────── */
+        h1 {
+            font-family: 'IM Fell English', Georgia, serif;
+            font-size: clamp(2rem, 5.5vw, 3rem);
+            color: var(--green-dark);
+            line-height: 1.2;
+            letter-spacing: 0.01em;
+        }
+
+        /* ── Star cluster ─────────────────────────────────────── */
+        .star-cluster {
+            display: block;
+            text-align: center;
+            margin: 1rem 0;
+            color: var(--gold);
+            animation: goldShimmer 3s ease-in-out infinite;
+        }
+        .star-sm { font-size: 0.72em; opacity: 0.75; vertical-align: middle; }
+        .star-lg { font-size: 1.3em; vertical-align: middle; margin: 0 0.07em; }
+        @keyframes goldShimmer { 0%,100%{opacity:.55} 50%{opacity:1} }
+
+        /* ── Body text ────────────────────────────────────────── */
+        .notice-body {
+            font-size: 1.18rem;
+            color: var(--text-secondary);
+            line-height: 1.85;
+            margin: 1.2rem auto 0;
+            max-width: 50ch;
+        }
+
+        /* ── Ornament divider ─────────────────────────────────── */
+        .ornament-divider {
+            display: flex; align-items: center; justify-content: center;
+            gap: 0.7rem;
+            color: var(--gold);
+            font-size: 0.9rem;
+            letter-spacing: 0.4em;
+            opacity: 0.75;
+            margin: 2rem 0;
+            user-select: none;
+        }
+        .ornament-divider::before,
+        .ornament-divider::after {
+            content: ''; display: block; flex: 1;
+            height: 1px; background: var(--border-color);
+        }
+
+        /* ── Contact block ────────────────────────────────────── */
+        .contact-wrap { margin-top: 0.2rem; }
+        .contact-label {
+            font-family: 'Nunito', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            display: block;
+            margin-bottom: 0.55rem;
+        }
+        .contact-email {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.18rem;
+            color: var(--teal);
+            text-decoration: none;
+            transition: color 0.2s ease;
+            word-break: break-all;
+        }
+        .contact-email:hover { color: var(--purpura); }
+        .contact-email em   { font-style: italic; }
+        .contact-email .sep { font-style: normal; }
+
+        /* ── Closing quote ────────────────────────────────────── */
+        .closing-quote {
+            margin-top: 2rem;
+            padding: 0.85rem 1.2rem;
+            border-left: 3px solid var(--gold);
+            background: var(--bg-secondary);
+            border-radius: 0 4px 4px 0;
+            text-align: left;
+            font-style: italic;
+            color: var(--text-muted);
+            font-size: 0.98rem;
+            line-height: 1.65;
+        }
+        .closing-quote cite {
+            display: block;
+            font-style: normal;
+            font-family: 'Nunito', sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-top: 0.4rem;
+            opacity: 0.8;
+        }
+
+        /* ── Footer note ──────────────────────────────────────── */
+        .footer-note {
+            margin-top: 2rem;
+            font-family: 'Nunito', sans-serif;
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        /* ── Animations ───────────────────────────────────────── */
+        @keyframes pageFadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ── Responsive ───────────────────────────────────────── */
+        @media (max-width: 480px) {
+            .notice { padding: 2.2rem 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button>
+
+    <main class="notice" role="main" aria-label="Work in progress notice">
+
+        <div class="wax-seal" aria-hidden="true">✦</div>
+
+        <span class="section-label">Notice — temporarily closed for research</span>
+
+        <h1>Work in Progress<br>Coming Soon</h1>
+
+        <span class="star-cluster" aria-hidden="true">
+            <span class="star-sm">✦</span>
+            <span class="star-lg">✦</span>
+            <span class="star-sm">✦</span>
+        </span>
+
+        <p class="notice-body">
+            Website under maintenance.
+        </p>
+
+        <div class="ornament-divider" aria-hidden="true">✦ ✦ ✦</div>
+
+        <div class="contact-wrap">
+            <span class="contact-label">In the meantime, correspondence is welcome at</span>
+            <a class="contact-email" href="mailto:ines.trindade.abreu@gmail.com">
+                <em>ines</em><span class="sep">.</span><em>trindade</em><span class="sep">.</span><em>abreu</em><span class="sep">@</span><em>gmail</em><span class="sep">.</span><em>com</em>
+            </a>
+        </div>
+
+        <blockquote class="closing-quote">
+            "If I have seen further, it is by standing on the shoulders of giants."
+            <cite>— Isaac Newton</cite>
+        </blockquote>
+
+        <p class="footer-note">© <span id="year"></span> Inês da Trindade Abreu &nbsp;·&nbsp; Back soon.</p>
+
+    </main>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+        const toggle = document.getElementById('theme-toggle');
+        const html   = document.documentElement;
+        const saved  = localStorage.getItem('theme') || 'light';
+        html.setAttribute('data-theme', saved);
+        toggle.textContent = saved === 'dark' ? '☀️' : '🌙';
+        toggle.addEventListener('click', () => {
+            const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', next);
+            localStorage.setItem('theme', next);
+            toggle.textContent = next === 'dark' ? '☀️' : '🌙';
+        });
+    </script>
+
+</body>
+</html>
